@@ -1,0 +1,77 @@
+\ProvidesPackage{mybeamer}[2009/08/20 by you]
+% contact me : liubenyuan@gmail.com
+% if you need any help :)
+
+%% graphics
+\RequirePackage{pgf}
+\RequirePackage[config]{subfig}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+%% tables
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+\RequirePackage[neverdecrease]{paralist}
+\RequirePackage{xcolor}
+%% math
+\RequirePackage{amsmath,amssymb}
+\RequirePackage[Symbol]{upgreek}
+\RequirePackage{bm}
+%% reference
+\RequirePackage[numbers,sort&compress]{natbib}
+%\RequirePackage[CJKbookmarks=true,pdfborder=0 0 1]{hyperref}
+
+%%-------------------------- config using split theme
+% \useoutertheme[height=0.1\textwidth,width=0.15\textwidth,hideothersubsections]{sidebar}
+% \usepackage{beamerthemesplit} % or not
+\definecolor{kugreen}{RGB}{123,30,31}
+\definecolor{kugreenlys}{RGB}{168,122,119}
+\definecolor{kugreenlyslys}{RGB}{190,153,147}
+\definecolor{kugreenlyslyslys}{RGB}{203,174,176}
+\def\hilite<#1>{\temporal<#1>{\color{blue!35}}{\color{magenta}}{\color{blue!75}}}
+%%--------------------------- config done
+
+%%-------------------------start--------------------%%
+\mode<presentation>
+{
+  \usetheme{Madrid}
+  % \usetheme[compress]{Berlin}
+  % \usetheme{Warsaw}
+  % \usetheme{Frankfurt}
+  % \usetheme{PaloAlto}
+  % or ...
+  % \setbeamertemplate{footline}[frame number]
+  \setbeamertemplate{background canvas}[vertical shading][bottom=white,top=structure.fg!12]
+  \setbeamertemplate{blocks}[rounded][shadow=true]
+  %\setbeamertemplate{navigation symbols}{}
+  %\setbeamercolor{sidebar}{bg=blue!50}
+  \usecolortheme[named=kugreen]{structure} % whale, dolphin, seahorse, lily, orchid
+  \useinnertheme[shadow]{rounded} % [shadow]{rounded}, {circles}
+  \useoutertheme[subsection=false,footline=authortitle]{miniframes}
+  \usefonttheme[onlymath]{serif} 
+  %\usefonttheme{structurebold} %
+  %\usefonttheme{professionalfonts} % 
+  \setbeamercovered{transparent}
+  % \logo{\includegraphics[width=1.5cm]{atr}}
+}
+%%--------------------------------------------------%%
+
+%%----------------------- Theorems -----------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+%%----------------------- Commands -----------------------------------------------
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+\newcommand{\magt}[1]{\textcolor{magenta}{#1}}
+\newcommand{\ve}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\hl}[1]{\textcolor{red}{\textbf{#1}}}
+
+% %
+\endinput
