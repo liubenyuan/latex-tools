@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{Lamp86}
+A.B. Smith, C.D. Jones, and E.F. Roberts,
+\newblock ``Article title,''
+\newblock {\em Journal}, vol. 62, pp. 291--294, January 1920.
+
+\bibitem{C2}
+C.D. Jones, A.B. Smith, and E.F. Roberts,
+\newblock ``Article title,''
+\newblock in {\em Proceedings Title}. IEEE, 2003, vol.~II, pp. 803--806.
+
+\end{thebibliography}
