@@ -1,0 +1,4 @@
+data/.hgignore.i
+data/htl-author.cls.i
+data/htl.tex.i
+data/makefile.i
