@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                         File: osa-revtex4-1.tex                             %
+%                        Date: April 15, 2013                                 %
+%                                                                             %
+%                              BETA VERSION!                                  %
+%                   JOSA A, JOSA B, Applied Optics, Optics Letters            %
+%                                                                             %
+%            This file requires the substyle file osajnl4-1.rtx,              %
+%                   running under REVTeX 4.1 and LaTeX 2e                     %
+%                                                                             %
+%                   USE THE FOLLOWING REVTeX 4-1 OPTIONS:                     %
+% \documentclass[osajnl,twocolumn,showpacs,superscriptaddress,10pt]{revtex4-1}%
+%                    %% Use 11pt for Applied Optics                           %
+%                                                                             %
+%               (c) 2013 The Optical Society of America                       %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% use 11pt for Applied Optics
+\documentclass[osajnl,twocolumn,showpacs,superscriptaddress,10pt]{revtex4-1}
+%% use 12pt for preprint option
+%%\documentclass[osajnl,preprint,showpacs,superscriptaddress,12pt]{revtex4-1} 
+
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage[config]{subfig}
+
+\newcommand{\ve}[1]{\mathbf{{#1}}}
+\newcommand{\abs}[1]{\ensuremath{\vert #1\vert}}
+\newcommand{\norm}[1]{\ensuremath{\Vert #1\Vert}}
+\newcommand{\diag}{\ensuremath{\mathrm{diag}}}
+
+\begin{document}
+
+\title{1-bit Compressed Sensing for low-energy physiological signal telemonitoring}
+
+% author
+\author{Benyuan Liu}\email{Corresponding author: liubenyuan@gmail.com}
+\author{Hongqi Fan}
+\author{Zaiqi Lu}
+\affiliation{Peer Review, The Department of Electrical and Communication Engineering, National University of Defense Technology, Changsha, Hunan, 410074, P. R. China}%
+
+\begin{abstract}
+\end{abstract}
+
+\ocis{(140.3490) Lasers, distributed-feedback; (060.2420) Fibers, polarization-maintaining; (060.3735) Fiber
+Bragg gratings; (060.2370) Fiber optics sensors.}
+                          % REPLACE WITH CORRECT OCIS CODES FOR YOUR ARTICLE
+                          % NOTE: \ocis{} IS ALIASED TO \pacs{} BUT MUST
+                          % FORMAT THE TERMS CORRECTLY FOR EACH JOURNAL
+
+\maketitle %% required
+
+\section{Introduction}
+
+Hi, the Optical Express\cite{Zhang2012a}.
+
+\bibliographystyle{osajnl}
+\bibliography{bsbl}
+%\begin{thebibliography}{99}
+%% Do not include separate BibTeX files; if BibTeX is used,
+%% paste the output (contents of .bbl file) here.
+%
+%\bibitem{revtex-au} \url{https://authors.aps.org/revtex4/}.
+%\bibitem{osastyle}  \url{http://www.opticsinfobase.org/submit/style/jrnls_style.cfm}.
+%
+%\end{thebibliography}
+
+\end{document}

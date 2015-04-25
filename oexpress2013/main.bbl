@@ -1,0 +1,9 @@
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem{Zhang2012a}
+Z.~Zhang and B.~Rao, \enquote{Extension of {SBL} algorithms for the recovery of
+  block sparse signals with intra-block correlation,} Signal Processing, IEEE
+  Transactions on \textbf{61}, 2009--2015 (2013).
+
+\end{thebibliography}
