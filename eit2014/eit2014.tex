@@ -1,0 +1,190 @@
+\documentclass[10pt,a4paper]{article}
+% ========================== DO NOT MODIFY =================================== %
+\usepackage[a4paper,left=2.0cm,top=2.0cm,right=2.0cm,bottom=2.0cm]{geometry} 
+\usepackage{amssymb,amsmath} % If amsmath is required
+\usepackage{url}
+\usepackage{times}
+\usepackage{mathptmx}      %% use fitting times fonts also in formulas
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{authblk}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage[small,compact]{titlesec}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[T1]{fontenc}
+\usepackage[UKenglish]{babel}
+\usepackage[small,bf,tableposition=top,figureposition=bottom,skip=2pt]{caption}
+
+
+% limit space between floats and text
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}
+% shrink the list environments
+\setlist{noitemsep}
+\setlist{nolistsep}
+
+% Shrink the bibliography
+  \let\oldthebibliography=\thebibliography
+  \let\endoldthebibliography=\endthebibliography
+  \renewenvironment{thebibliography}[1]{%
+    \begin{oldthebibliography}{#1}%
+      \setlength{\parskip}{0ex}%
+      \setlength{\itemsep}{0ex}%
+  }%
+  {%
+    \end{oldthebibliography}%
+  }
+
+% Format of the front matter
+\renewcommand{\Affilfont}{\small}
+\setlength{\affilsep}{1ex}
+\renewcommand\Authands{, }
+\setlength{\droptitle}{-1.634cm}
+% ============================================================================ %
+
+
+% To be able to type european characters without escape sequences
+% uncomment according to your operating system, if desired:
+% ---------------------------------------------------------------------------- %
+% \usepackage[latin1]{inputenc}   %% (Windows, old Linux)
+% \usepackage[utf8]{inputenc}     %% (Linux)
+% \usepackage[applemac]{inputenc} %% (Mac OS)
+% ---------------------------------------------------------------------------- %
+
+
+%------------------------------- FRONT MATTER -------------------------------- %
+\title{Template for EIT2014%
+\vspace{-2ex}} %remove vertical space
+\author[1]{Bart\l{}omiej~Grychtol}
+\author[2]{Andy~Adler}
+\affil[1]{German Cancer Research Center, Heidelberg, Germany}
+\affil[2]{Carleton University, Ottawa, Canada, \protect\url{info@eit2014.org}}
+\date{}
+%----------------------------------------------------------------------------- %
+
+
+
+\begin{document}
+\maketitle
+\vspace{-1.5cm}
+\thispagestyle{empty}
+
+\begin{multicols}{2}
+
+\noindent {\bf Abstract:} The abstract should contain no more than 8 
+lines of text and describe the main methods and findings.
+The abstract should contain no more than 8 
+lines of text and describe the main methods and findings.
+The abstract should contain no more than 8 
+lines of text and describe the main methods and findings.
+The abstract should contain no more than 8 
+lines of text and describe the main methods and findings.
+
+\section{Introduction}
+This is a \LaTeX{} template file to be used for manuscript submissions for
+the 14\textsuperscript{th} International Conference on Electrical Impedance 
+Tomography
+to be held in Gananoque, Canada on April 24-26, 2014. Please note the general 
+requirements:
+\begin{itemize}
+\item Single page of A4 paper
+\item All margins at 2~cm
+\item British English
+\item Main body should be in 10pt Times font
+\item Email address of at least one author must be specified as part of the 
+affiliation block
+\end{itemize}
+{\bf The program committee requires a full 1 page submission (rather than
+just a short abstract).}
+
+
+\section{Methods} 
+The paper can be prepared in \LaTeX\ or MS Word and submitted as a *.pdf or 
+*.docx file, 
+respectively. The templates can be downloaded here:%
+\begin{itemize}
+\item \LaTeX:\\\url{http:\\eit2014.org\tmplt_latex.zip}
+\item Word:\\\ \url{http:\\eit2014.org\tmplt_word.zip}
+\end{itemize}
+
+\subsection{Figures and tables} 
+Figures and tables (floats) can span one or two columns. Note that
+\begin{enumerate}
+\item Two-column floats must be at the bottom of the page.
+\item Captions appear below figures but above tables, as in
+fig.~\ref{fig:single-col} and table~\ref{tbl:twocol}.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+%\includegraphics[width=.96\columnwidth]{filename.pdf}
+\fbox{ \parbox[r][4cm][c]{.96\columnwidth}{ filename.pdf }}
+\caption{\label{fig:single-col}%
+Column-width figure, using the {\tt figure} environment with the {\tt [H]} 
+option from the {\tt floats} package.}
+\end{figure}
+
+\subsection{Equations}
+Equations should be placed on separate lines and numbered
+\begin{equation}
+x(t) = s(f_\omega(t))
+\label{eq1}
+\end{equation}
+According to equation \ref{eq1}, a residue theorem states that
+\begin{equation}
+\oint_C F(z)dz=2 \pi j \sum_k Res[F(z),p_k],
+\label{eq3}
+\end{equation}
+which is an important finding.
+
+
+\subsubsection{References}
+List and number all references at the end of the paper. The references should be 
+numbered in order of appearance in the document.
+The reference formats for a journal article~\cite{Waspaa1}, a book
+~\cite{Waspaa2} and conference proceedings~\cite{other} are illustrated in the 
+References section. 
+
+The format is compact and does not include titles for 
+articles. References in text should be sorted and grouped compactly, as 
+in~\cite{Waspaa1,Waspaa2,other}. We encourage the use of \textsc{Bib}\TeX\ and 
+the provided {\tt compact.bst} file as well as the {\tt natbib} package.
+
+\section{Conclusions}
+This paper makes many important points.
+
+
+\footnotesize
+\bibliographystyle{compact}
+\bibliography{eit2014}
+% We encourage the use of bibtex, but you can also type the reference 
+% the traditional way
+%\begin{thebibliography}{}
+%\bibitem[1]{Waspaa1} Lyon RF, Mead, C, IEEE 
+%Trans. ASSP  36: 1119--1134, 1988.
+%\bibitem[2]{Waspaa2} Lee, KF, Automatic Speech Recognition: The Development 
+%of the SPHINX SYSTEM, Kluwer Academic Publishers, Boston, 1989.
+%\end{thebibliography}
+\end{multicols}
+
+
+
+\begin{table*}[b]
+\centering
+%From: http://amath.colorado.edu/documentation/LaTeX/reference/tables/ex1.html
+\caption{\label{tbl:twocol} %
+Two-column table, using the {\tt table*} environment placed at the end of the 
+document.}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}@{}|c|ccc|r|}
+        \hline
+$k$ &  $x_1^k$    &   $x_2^k$  & $x_3^k$   & remarks  \\
+        \hline
+0   & -0.3 & 0.6 & 0.7  &  \\
+7   & 0.5 & 0          & -0.523  & $\epsilon < \xi $ \\
+        \hline
+\end{tabular*}
+\end{table*}
+
+
+\end{document}
