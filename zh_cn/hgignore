@@ -1,0 +1,25 @@
+syntax: glob
+
+.directory
+.hgignore
+
+*.gz
+*.zip
+*.eps
+*.pdf
+*.fig
+*.diff
+*.swp
+*.mat
+
+*.dvi
+*.thm
+*.bst
+*.log
+*.bbl
+*.blg
+*.out
+*.toc
+*.aux
+
+tmp/

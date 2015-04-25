@@ -1,0 +1,156 @@
+% 博士期间通用模板
+\ProvidesPackage{doctor}
+
+% geo
+\RequirePackage[top=1.67in,bottom=1.67in,left=1.6in,right=1.6in]{geometry}
+\RequirePackage[pagestyles]{titlesec}
+% figures
+\RequirePackage{graphicx}
+\RequirePackage[config]{subfig}
+\RequirePackage{float}
+% tables
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+%\RequirePackage{slashbox}
+\RequirePackage[neverdecrease]{paralist}
+\RequirePackage{xcolor}
+% math & fonts
+\RequirePackage{amsmath}
+%\RequirePackage[amsbb,eufrak,slantedGreek,compatiblegreek,subscriptcorrection,nofontinfo]{mtpro2}
+\RequirePackage[amsbb,eufrak,compatiblegreek,subscriptcorrection,nofontinfo]{mtpro2}
+%\RequirePackage{amsmath,amssymb,bm}
+\RequirePackage{bm}
+%\RequirePackage{txfonts}
+%\RequirePackage{mathpazo}
+\RequirePackage{algpseudocode}
+\RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
+\RequirePackage[CJKnumber,CJKchecksingle,no-math]{xeCJK}
+\RequirePackage{indentfirst}
+% hypers & refs
+\RequirePackage[numbers,sort&compress]{natbib}
+% \RequirePackage{natbib}
+\setcitestyle{square,aysep={},yysep={;}}
+\renewcommand{\cite}[1]{\citep{#1}}
+\RequirePackage{url}
+\RequirePackage{xcolor}
+\RequirePackage[CJKbookmarks=true,colorlinks,linkcolor=blue,citecolor=red,pdfborder=0 1 1]{hyperref}
+%\RequirePackage{hypernat}
+
+% patch of xunicode
+\defaultfontfeatures{Mapping=tex-text}
+\xeCJKsetcharclass{"0}{"2E7F}{0}
+\xeCJKsetcharclass{"2E80}{"FFFF}{1}
+
+% tweak fonts (let's go otf!)
+%  \setmainfont{Times New Roman PS Std} % could be changed to "Times New Roman PS Std"
+%  \setsansfont{Arial}
+%  \setmonofont{Courier New}
+\setmainfont{Adobe Garamond Pro}
+\setsansfont{Adobe Jenson Pro}
+\setmonofont{Courier New}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Kaiti Std}
+\setCJKfamilyfont{hei}{Adobe Heiti Std}
+\setCJKfamilyfont{kai}{Adobe Kaiti Std}
+\newcommand{\kai}{\CJKfamily{kai}}      % 楷体
+\newcommand{\hei}{\CJKfamily{hei}}      % 黑体
+
+% page layout
+\setlength{\parskip}{4pt plus1pt minus0pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\setlength{\parindent}{20pt}
+\addtolength{\oddsidemargin}{-1cm}
+\advance\textwidth 1.5cm
+\addtolength{\topmargin}{-1cm}
+\addtolength{\headsep}{0.3cm}
+\addtolength{\textheight}{2.3cm}
+
+% paragraph
+\renewcommand{\baselinestretch}{1.3}
+\newpagestyle{mainpage}{
+   \sethead{}{\S\,\thesection\quad\sectiontitle}{}
+   \setfoot{}{$\cdot$~\thepage~$\cdot$}{}
+\headrule}
+\thispagestyle{empty}
+
+% theorem
+\theoremstyle{nonumberplain}
+\theorembodyfont{\rmfamily}
+\theoremheaderfont{\sffamily}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\theoremseparator{:\,}
+\newtheorem{proof}{证明}[section]
+
+\theoremstyle{plain}
+\theorembodyfont{\kai}
+\theoremheaderfont{\hei}
+\theoremsymbol{}
+\theoremseparator{:\,}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+
+% customize what the header look like
+\setcounter{secnumdepth}{3}
+\titleformat{\chapter}{\filcenter \bfseries\Large}{第\CJKnumber{\thechapter}章\,}{1em}{}
+\titleformat{\section}{\filcenter \bfseries\large}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing{\chapter}{0pt}{2.4ex-\topskip-\heightof{A}}{2.4ex}
+\titlespacing{\section}{0pt}{2ex-\heightof{a}}{2ex}
+\titlespacing{\subsection}{2em}{2ex}{2ex}
+\titlespacing{\subsubsection}{2em}{1ex}{0ex}
+
+% customize command
+% \renewcommand{\vec}[1]{\mathbf{\mathrm{#1}}}
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\oldvec{#1}\,}
+\newcommand{\ve}[1]{\mathbf{{#1}}}
+\newcommand{\bhat}[1]{\ensuremath{\mathbf{\hat{#1}}}}
+\newcommand{\pozhehao}{\kern0.3ex\rule[0.8ex]{2em}{0.1ex}\kern0.3ex}
+\newcommand{\expect}[1]{\ensuremath{\langle #1\rangle}}
+\newcommand{\fcite}[1]{[{\bf #1}]}
+\newcommand{\rcite}{[{\bf\textcolor{red}{R}}]}
+\newcommand{\SI}[2]{\ensuremath{\mathrm{#1}^{#2}}}
+\newcommand{\abs}[1]{\ensuremath{\vert #1\vert}}
+\newcommand{\wmark}{{\color{red}$\square$}}
+\newcommand{\rd}{\ensuremath{\mathrm{d}}}
+\newcommand{\lby}[1]{{\color{red}\kai #1}}
+\newcommand{\done}{{\color{red}\bf\ensuremath{\checkmark}}}
+\newcommand{\norm}[1]{\ensuremath{\Vert #1\Vert}}
+\newcommand{\diag}{\ensuremath{\mathrm{diag}}}
+
+\RequirePackage{color}%
+% defining values of gray
+\definecolor{shadecolor}{gray}{.85}%
+\definecolor{tintedcolor}{gray}{.80}%
+\RequirePackage{framed}%
+%
+\newenvironment{tinted}{%
+  \def\FrameCommand{\colorbox{tintedcolor}}%
+  \MakeFramed {\FrameRestore}}%
+ {\endMakeFramed}%
+%
+\newenvironment{svgraybox}%
+       {\fboxsep=12pt\relax
+        \begin{shaded}%
+        \list{}{\leftmargin=12pt\rightmargin=2\leftmargin\leftmargin=\z@\topsep=\z@\relax}%
+        \expandafter\item\parindent=0pt
+        \hskip-\listparindent}%
+       {\endlist\end{shaded}}%
+%
+\newenvironment{svtintedbox}%
+       {\fboxsep=12pt\relax
+        \begin{tinted}%
+        \list{}{\leftmargin=12pt\rightmargin=2\leftmargin\leftmargin=\z@\topsep=\z@\relax}%
+        \expandafter\item\parindent=0pt
+        \relax}%
+       {\endlist\end{tinted}}%
+%
+\endinput
+%%
+%% End of file `nudtx.sty'.

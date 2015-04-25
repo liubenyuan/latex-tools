@@ -1,0 +1,31 @@
+\documentclass[a4paper,12pt,openany]{book}
+\usepackage{bookzh}
+% that's all folks
+
+%--------------------- title and author ---------------------------------------
+\title{Quantize And CS : Report ID}
+\displaytitle{Report}
+\author{Liu Benyuan}
+\date{\today}
+
+\begin{document}
+%%-- graphics folder --%%
+\graphicspath{{fig/}}
+\maketitle
+%\tableofcontents
+
+%%-- main source --%%
+\mainmatter
+\input{part2}
+
+%%-- bibliography --%%
+\bibliographystyle{bstutf8}
+\phantomsection\cleardoublepage
+\bibliography{trek}
+
+%%-- back matter --%%
+%\appendix
+%\input{data/append_GML}
+%\input{data/append_MI}
+
+\end{document}
