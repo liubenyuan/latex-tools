@@ -1,0 +1,338 @@
+%
+% liubenyuan <liubenyuan@gmail.com>
+% 2014-07-27
+%
+\ProvidesPackage{zhart}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 下面对各个条目进行控制
+% 0. 宏包加载
+% 1. 符号列表
+% 2. 字体设置, 字体大小设置, 中文化的名称
+% 3. 版面设置, 各个浮动体的段前段后, 占据比例, 页眉页脚等
+% 4. 公式定理, 问题解答, 算法等环境
+% 5. 章节标题, TOC设置, chapter定义微调, bib微调
+% 6. 自定义的一些方便命令
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% 在文章的开始\begin{document}模板自动加上了：选择正文字体
+%% (用户不要再用**任何**版面微调命令)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProcessOptions\relax
+\RequirePackage{calc}
+%==== geometry
+\RequirePackage[papersize={19.5cm,27.1cm},text={14.5cm,21.5cm},showcrop]{geometry}%
+%==== 国防工业出版社，1/16规格，版心140x215mm，成品184x260mm, 39行，38字每面
+%\RequirePackage[papersize={18.4cm,26.0cm},text={14.2cm,21.5cm}]{geometry}%
+%\RequirePackage[papersize={18.4cm,26.0cm},text={14.2cm,21.5cm},showframe,showcrop]{geometry}%
+\geometry{headheight=10mm,headsep=6mm,footskip=8mm}%
+\geometry{top=30mm,right=25mm,bindingoffset=0mm}%
+%====
+\RequirePackage[pagestyles,newparttoc]{titlesec}
+\RequirePackage{titletoc}
+% style footnote
+\RequirePackage[perpage]{footmisc}
+% figures
+\RequirePackage{graphicx}
+\RequirePackage[config]{subfig}
+\RequirePackage{float}
+% tables
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+\RequirePackage{slashbox}
+\RequirePackage[neverdecrease]{paralist}
+\RequirePackage{colortbl}
+% math & fonts
+\RequirePackage[T1]{fontenc}
+\RequirePackage{amsmath}
+\RequirePackage[amsbb,eufrak,compatiblegreek,subscriptcorrection,nofontinfo]{mtpro2}
+\interdisplaylinepenalty=2500
+\RequirePackage{bm}
+%---------------------------------------------------------------%%
+\RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
+\RequirePackage[CJKnumber,CJKchecksingle,no-math]{xeCJK}
+\RequirePackage{indentfirst}
+% hypers & refs
+\RequirePackage[numbers,sort&compress]{natbib}
+\RequirePackage{url}
+\RequirePackage{cases,listings}
+\RequirePackage{fancyvrb}
+\RequirePackage{algorithm}
+\RequirePackage{algorithmic}
+%-------------------- colors --------------------------------------------------
+\RequirePackage[dvipsnames]{xcolor}    % Allows the definition of hex colors
+\definecolor{titleblue}{rgb}{0.16,0.24,0.64} % Custom color for the title on the title page
+%\definecolor{linkcolor}{rgb}{0,0,0.42} % Custom color for links - dark [blue] at the moment
+\definecolor{headgreen}{rgb}{0.14,0.50,0.05}
+\RequirePackage[
+    CJKbookmarks=true,
+    colorlinks,linkcolor=black,citecolor=titleblue,urlcolor=titleblue,
+    pdfborder=0 1 1]{hyperref}
+\RequirePackage[stretch=10]{microtype} % slightly tweaking font spacing for aesthetic
+
+%==============================================================================
+%% patch of xunicode
+\defaultfontfeatures{Mapping=tex-text}
+\xeCJKsetcharclass{"0}{"2E7F}{0}
+\xeCJKsetcharclass{"2E80}{"FFFF}{1}
+%
+\setmainfont{Warnock Pro}
+\setsansfont{Myriad Pro}
+\setmonofont{Inconsolata}
+%
+%\setmainfont{Times New Roman PS Std}
+%\setsansfont{Arial}
+%\setmonofont{Courier New}
+%
+%% Using Adobe Family Fonts
+%\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+%\setCJKsansfont{Adobe Heiti Std} % Hei
+%\setCJKmonofont{Adobe Kaiti Std} % Kai 
+%% Using Founder Family Fonts
+\setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong_GB18030-Z01}
+\setCJKsansfont{FZHei-B01} % Hei
+\setCJKmonofont{FZKai-Z03} % Kai
+\setCJKfamilyfont{song}{FZShuSong_GB18030-Z01}
+\setCJKfamilyfont{hei}{FZHei-B01}
+\setCJKfamilyfont{fs}{FZKai-Z03} % Kai
+\setCJKfamilyfont{kai}{FZKai-Z03} % Kai
+\setCJKfamilyfont{li}{FZKai-Z03} % Kai
+\setCJKfamilyfont{you}{FZKai-Z03} % Kai
+\setCJKfamilyfont{cusong}{FZXiaoBiaoSong-B05} % 小标宋
+%==============================================================================
+\newcommand{\cusong}{\CJKfamily{cusong}} % 小标宋作为加粗宋体
+\newcommand{\song}{\CJKfamily{song}}     % 宋体
+\newcommand{\fs}{\CJKfamily{fs}}         % 仿宋体
+\newcommand{\kai}{\CJKfamily{kai}}       % 楷体
+\newcommand{\hei}{\CJKfamily{hei}}       % 黑体
+\newcommand{\li}{\CJKfamily{li}}         % 隶书
+\newcommand{\you}{\CJKfamily{you}}       % 幼圆
+\def\songti{\song}
+\def\fangsong{\fs}
+\def\kaishu{\kai}
+\def\heiti{\hei}
+\def\lishu{\li}
+\def\youyuan{\you}
+\newlength\thu@linespace
+\newcommand{\thu@choosefont}[2]{%
+    \setlength{\thu@linespace}{#2*\real{#1}}%
+    \fontsize{#2}{\thu@linespace}\selectfont}
+\def\thu@define@fontsize#1#2{%
+    \expandafter\newcommand\csname #1\endcsname[1][\baselinestretch]{%
+    \thu@choosefont{##1}{#2}}}
+\thu@define@fontsize{chuhao}{42bp}
+\thu@define@fontsize{xiaochu}{36bp}
+\thu@define@fontsize{yihao}{26bp}
+\thu@define@fontsize{xiaoyi}{24bp}
+\thu@define@fontsize{erhao}{22bp}
+\thu@define@fontsize{xiaoer}{18bp}
+\thu@define@fontsize{sanhao}{16bp}
+\thu@define@fontsize{xiaosan}{15bp}
+\thu@define@fontsize{sihao}{14bp}
+\thu@define@fontsize{banxiaosi}{13bp}
+\thu@define@fontsize{xiaosi}{12bp}
+\thu@define@fontsize{dawu}{11bp}
+\thu@define@fontsize{wuhao}{10.5bp}
+\thu@define@fontsize{xiaowu}{9bp}
+\thu@define@fontsize{liuhao}{7.5bp}
+\thu@define@fontsize{xiaoliu}{6.5bp}
+\thu@define@fontsize{qihao}{5.5bp}
+\thu@define@fontsize{bahao}{5bp}
+\newcommand*{\ziju}[1]{\renewcommand{\CJKglue}{\hskip #1}}
+%% 中文化名称 %%
+%\renewcommand\contentsname{目\hspace{1em}录}
+%\renewcommand\listfigurename{图\hspace{1em}目\hspace{1em}录}
+%\renewcommand\listtablename{表\hspace{1em}目\hspace{1em}录}
+%\newcommand\listequationname{公式索引}
+%\newcommand\equationname{公式}
+%\renewcommand\bibname{参\kern.25em考\kern.25em文\kern.25em献}
+%\renewcommand\indexname{索\hspace{1em}引}
+%\renewcommand\figurename{\!图}
+%\renewcommand\tablename{\!表}
+%\renewcommand\appendixname{附\hspace{1em}录}
+
+%==============================================================================
+% 版面设置
+\setlength{\parskip}{2bp \@minus 2bp}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\setlength{\parindent}{2em}
+%==== cleardoublepage {add your BLANK sentence} ====
+\renewcommand\cleardoublepage{\clearpage\if@openright \ifodd\c@page\else
+  \newpage{}
+  \thispagestyle{empty}
+  \vspace*{\fill}
+  \begin{center}
+    \emph{This Page is Intentially Left BLANK.}
+  \end{center}
+  \vspace*{\fill}
+  \clearpage\fi\fi%
+}
+%==== page layout fractions ====
+\setlength{\floatsep}{12bp}
+\setlength{\intextsep}{12bp}
+\setlength{\textfloatsep}{12bp}
+\setlength{\@fptop}{0bp}
+\setlength{\@fpsep}{12bp}
+\setlength{\@fpbot}{0bp}
+\renewcommand{\textfraction}{0.01}
+\renewcommand{\topfraction}{0.99}
+\renewcommand{\bottomfraction}{0.99}
+\renewcommand{\floatpagefraction}{0.90}
+\widowpenalty=10000%avoid single line per page
+\clubpenalty=10000
+%==== table/figure fonts, captions ====
+\setlength\arrayrulewidth{1pt}\arrayrulecolor[gray]{.4}
+\let\old@tabular\tabular
+\def\tabular{\liuhao[1.25]\old@tabular}
+\DeclareCaptionLabelFormat{thu}{{\fs\xiaowu[1.25] #1~\rmfamily #2}}
+\DeclareCaptionLabelSeparator{thu}{\hspace{1em}}
+\DeclareCaptionFont{thu}{\fs\xiaowu[1.25]}
+\captionsetup{labelformat=thu,labelsep=thu,font=thu}
+\captionsetup[table]{position=top,belowskip=0bp \@plus 1bp \@minus 1bp,aboveskip=6bp \@plus 1bp \@minus 1bp}
+\captionsetup[figure]{position=bottom,belowskip=-3bp \@plus 1bp \@minus 1bp,aboveskip=6bp \@plus 1bp \@minus 1bp}
+\captionsetup[subfloat]{labelformat=simple,font=thu,captionskip=6bp,nearskip=6bp,farskip=0bp,topadjust=0bp}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+\renewcommand{\thesubtable}{(\alph{subtable})}
+
+%==============================================================================
+%% headrule
+\setfootrule{1bp}
+\renewcommand\setheadrule[1]{%
+  \ifdim#1=\z@
+    \let\makeheadrule\@empty
+  \else
+    \def\makeheadrule{\color{lightgray}\rule[-.4\baselineskip]{\linewidth}{2bp}}%
+  \fi}
+\newpagestyle{plainbook}{
+\sethead[{\bf\cusong\xiaowu\textcolor{black}{\thepage}}][\song\xiaowu\@displaytitle][]
+{}{\cusong\xiaowu \sectiontitle}{{\bf\xiaowu\textcolor{black}{\thepage}}}%
+\setfoot{}{}{}%
+\headrule%
+}
+%========== TOC ===========%
+\titlecontents{section}[2em]{\songti \wuhao[1.25] } % 5S
+    {\makebox[2.5em][l]{\thecontentslabel\quad}}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{subsection}[4.6em]{\kai \wuhao[1.25]} % 5K
+    {\thecontentslabel\quad}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{subsubsection}[6.6em]{\kai \wuhao[1.25]} % 5K
+    {\thecontentslabel\quad}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{figure}[0pt]{\hei \wuhao[1.25]} % song
+    {\makebox[3.5em][l]{图~\thecontentslabel\quad}}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{table}[0pt]{\hei \wuhao[1.25]} % song
+    {\makebox[3.5em][l]{表~\thecontentslabel\quad}}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\setcounter{secnumdepth}{3}
+%======== TITLE DISPLAY ========%
+\titleformat{\section}{\filcenter \color{headgreen}\sf\heiti\xiaosi[1.25]}{\thesection}{1em}{}
+\titleformat{\subsection}{\color{headgreen}\sf\heiti\xiaosi[1.25]}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\color{headgreen}\sf\heiti\xiaosi[1.25]}{\thesubsubsection}{1em}{}
+\titlespacing{\section}{0pt}{2ex-\heightof{a}}{2ex}
+\titlespacing{\subsection}{2em}{1ex}{1ex}
+\titlespacing{\subsubsection}{2em}{1ex}{1ex}
+%======== MAIN FONT ========%
+\renewcommand\normalsize{%
+\@setfontsize\normalsize{12bp}{12.87bp}%
+\renewcommand{\baselinestretch}{1.3}%
+\setlength\abovedisplayskip{8bp \@plus 1.6bp \@minus 1.6bp}%
+\setlength\abovedisplayshortskip{8bp \@plus 1.2bp \@minus 1.2bp}%
+\setlength\belowdisplayskip{\abovedisplayskip}%
+\setlength\belowdisplayshortskip{\abovedisplayshortskip}%
+}
+
+%==============================================================================
+%% Customized Command
+\newcommand{\eqhere}{\begin{equation}\color{red}1+e^{j\pi}=0\end{equation}}
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\oldvec{#1}\,}
+\newcommand{\brin}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\ve}[1]{{\ensuremath{\mathbold{{#1}}}}} % \newcommand{\ve}[1]{\mathbf{{#1}}}
+\newcommand{\bhat}[1]{\ensuremath{\mathbf{\hat{{#1}}}}}
+\newcommand{\pozhehao}{\kern0.3ex\rule[0.8ex]{2em}{0.1ex}\kern0.3ex}
+\newcommand{\expect}[1]{\ensuremath{\langle #1\rangle}}
+\newcommand{\rcite}{[{\bf\textcolor{red}{R}}]}
+\newcommand{\SI}[2]{\ensuremath{\mathrm{#1}^{#2}}}
+\newcommand{\abs}[1]{\ensuremath{\vert #1\vert}}
+\newcommand{\norm}[1]{\ensuremath{\Vert #1\Vert}}
+\newcommand{\abbr}{\ensuremath{\stackrel{\text{\tiny abbr.}}{=}}}
+\newcommand{\snow}[1]{\ensuremath{\stackrel{\ast}{#1}}}
+\newcommand{\wmark}{{\color{red}$\square$}}
+\newcommand{\rd}{\ensuremath{\mathrm{d}}}
+\newcommand{\lby}[1]{{\color{red}\kai #1}}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}} % superscript citation
+\newcommand{\fcite}[1]{[{#1}]}
+\newcommand{\fucite}[1]{\textsuperscript{[{#1}]}} % fake cite number
+%% Theorems
+\theoremstyle{nonumberplain}
+\theorembodyfont{\rmfamily}
+\theoremheaderfont{\sffamily}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\theoremseparator{:\,}
+\newtheorem{proof}{证明}[section]
+\theoremstyle{plain}
+\theorembodyfont{\kai}
+\theoremheaderfont{\hei}
+\theoremsymbol{}
+\theoremseparator{:\,}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+
+%==============================================================================
+%% Make your TitlePage
+\def\subtitle#1{\gdef\@subtitle{#1}}
+\def\@subtitle{}
+\def\displaytitle#1{\gdef\@displaytitle{#1}}
+\def\@displaytitle{}
+\def\address#1{\gdef\@address{#1}}
+\def\@address{}
+\renewcommand\maketitle{\newpage%
+\thispagestyle{empty}%
+  \null
+  \vskip 10mm                 % Vertical space above title.
+\begingroup
+  \def\and{\unskip, }
+  \parindent=\z@
+  \pretolerance=10000
+  \rightskip=\z@ \@plus 0cm
+  \begin{center}
+  \vskip 5mm                % Vertical space after author. [2cm]
+  {\bf\cusong\erhao \textcolor{titleblue}{\@title} \par}%
+  \vskip 5mm                % Vertical space after title.
+  \if!\@subtitle!\else
+  {\cusong\sanhao[1.25]\ignorespaces\color{titleblue} \textbf{\textit{\@subtitle}} \par}
+  \vskip 5mm                % Vertical space after subtitle.
+  \fi
+  % \def\HRule{\leavevmode\leaders \hrule height 4bp\hfill\kern\z@}
+  % {\color{titleblue} \HRule}
+  {\cusong\xiaosi[1.25] \lineskip .5em \textbf{\textit{\@author}} \par \textit{\@address} \par}%
+  \if!\@date!\else
+  {\cusong\xiaosi[1.25] \@date}%         % Date set in \large size.
+  %\bf\cusong\xiaosi[1.25] LL Corporation \par $\bm{\cdot}$\kern0.3em Xi'an\kern0.3em$\bm{\cdot}$
+  \end{center}
+  \vskip 4mm               % Vertical space after date.
+  \fi
+\endgroup}
+
+%==============================================================================
+% Final
+\AtBeginDocument{%
+\renewcommand{\baselinestretch}{1.5}\relax%
+\normalsize\relax%
+\pagenumbering{arabic}
+\pagestyle{plainbook}}
+\newcommand{\sectionbreak}{%
+\addpenalty{-300}%
+\vspace*{0pt}%
+}
+
+\endinput
