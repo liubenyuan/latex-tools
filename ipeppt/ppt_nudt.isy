@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipestyle SYSTEM "ipe.dtd">
+<ipestyle name="presentation">
+<color name="ivyblue" value="0.1922 0.3961 0.6824"/>
+<color name="ivydark" value="0.0824 0.2235 0.3490"/>
+<color name="ivypurp" value="0.8039 0.3569 0.5569"/>
+<color name="ivygreen" value="0.0 0.7529 0.5529"/>
+<color name="ivyyellow" value="0.9961 0.8431 0.2431"/>
+<color name="sandy" value="0.90196 0.88627 0.68627"/>
+<color name="stone" value="0.65490 0.63922 0.49412"/>
+<color name="beach" value="0.93725 0.92549 0.79216"/>
+<color name="lblue" value="0.67451 0.81176 0.98824"/>
+<color name="lgree" value="0.78824 0.84314 0.52941"/>
+<color name="lgray" value="0.81961 0.82882 0.74118"/>
+<color name="dgray" value="0.41961 0.42882 0.34118"/>
+<color name="ocean" value="0.015686 0.388235 0.501961"/>
+<color name="deepb" value="0 0.18431 0.18431"/>
+<color name="green" value="0.27451 0.53725 0.40000"/>
+<color name="chese" value="0.725490 0.070588 0.105882"/>
+<color name="ddred" value="0.29804 0.10588 0.10588"/>
+<color name="black" value="0.0 0.0 0.0"/>
+<color name="white" value="1.0 1.0 1.0"/>
+<color name="red" value="1.0 0 0"/>
+<color name="blue" value="0 0 1.0"/>
+<color name="yellow" value="1.0 1.0 0"/>
+<color name="gold" value="1.0 0.843 0"/>
+<dashstyle name="dashed" value="[4] 0"/>
+<dashstyle name="dotted" value="[1 3] 0"/>
+<dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
+<pen name="normal" value="1.2"/>
+<pen name="heavier" value="2.4"/>
+<pen name="fat" value="3.6"/>
+<pen name="ultrafat" value="6"/>
+<textsize name="normal" value="\normalsize"/>
+<textsize name="large" value="\large"/>
+<textsize name="huge" value="\LARGE"/>
+<textsize name="small" value="\normalsize"/>
+<textstretch name="normal" value="2.8"/>
+<textstretch name="large" value="2.8"/>
+<textstretch name="huge" value="2.8"/>
+<textstretch name="small" value="2.4"/>
+<symbolsize name="normal" value="9"/>
+<symbolsize name="large" value="15"/>
+<symbolsize name="small" value="6"/>
+<symbolsize name="foot" value="6"/>
+<symbolsize name="tiny" value="3.3"/>
+<arrowsize name="normal" value="15"/>
+<arrowsize name="large" value="20"/>
+<arrowsize name="small" value="10"/>
+<arrowsize name="tiny" value="6"/>
+<gridsize name="4 pts (~1.5mm)" value="4"/>
+<gridsize name="16 pts (~6 mm)" value="16"/>
+<gridsize name="32 pts (~12 mm)" value="32"/>
+<gridsize name="10 pts (~3.5 mm)" value="10"/>
+<gridsize name="20 pts (~7 mm)" value="20"/>
+<gridsize name="14 pts (~5 mm)" value="14"/>
+<gridsize name="28 pts (~10 mm)" value="28"/>
+<gridsize name="56 pts (~20 mm)" value="56"/>
+<anglesize name="90 deg" value="90"/>
+<anglesize name="60 deg" value="60"/>
+<anglesize name="45 deg" value="45"/>
+<anglesize name="30 deg" value="30"/>
+<anglesize name="22.5 deg" value="22.5"/>
+<tiling name="falling" angle="-60" width="3" step="12"/>
+<tiling name="rising" angle="30" width="3" step="12"/>
+<textstyle name="center" begin="\begin{center}" end="\end{center}"/>
+<textstyle name="itemize" begin="\begin{flushleft}\begin{itemize}" end="\end{itemize}\end{flushleft}"/>
+<textstyle name="item" begin="\begin{flushleft}\begin{itemize}\item{}" end="\end{itemize}\end{flushleft}"/>
+<textstyle name="normal" begin="\begin{flushleft}" end="\end{flushleft}"/>
+<symbol name="mark/circle(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e 0.4 0 0 0.4 0 0 e
+</path></symbol>
+<symbol name="mark/disk(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+</path></symbol>
+<symbol name="mark/fdisk(sfx)" transformations="translations">
+<group><path fill="sym-fill">
+0.5 0 0 0.5 0 0 e
+</path><path fill="sym-stroke" fillrule="eofill">
+0.6 0 0 0.6 0 0 e 0.4 0 0 0.4 0 0 e
+</path></group></symbol>
+<symbol name="mark/box(sx)" transformations="translations">
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m 0.6 -0.6 l 0.6 0.6 l -0.6 0.6 l h
+-0.4 -0.4 m 0.4 -0.4 l 0.4 0.4 l -0.4 0.4 l h</path></symbol>
+<symbol name="mark/square(sx)" transformations="translations">
+<path fill="sym-stroke">
+-0.6 -0.6 m 0.6 -0.6 l 0.6 0.6 l -0.6 0.6 l h</path></symbol>
+<symbol name="mark/fsquare(sfx)" transformations="translations">
+<group><path fill="sym-fill">
+-0.5 -0.5 m 0.5 -0.5 l 0.5 0.5 l -0.5 0.5 l h</path>
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m 0.6 -0.6 l 0.6 0.6 l -0.6 0.6 l h
+-0.4 -0.4 m 0.4 -0.4 l 0.4 0.4 l -0.4 0.4 l h</path></group></symbol>
+<symbol name="mark/cross(sx)" transformations="translations">
+<group><path fill="sym-stroke">
+-0.43 -0.57 m 0.57 0.43 l 0.43 0.57 l -0.57 -0.43 l h</path>
+<path fill="sym-stroke">
+-0.43 0.57 m 0.57 -0.43 l 0.43 -0.57 l -0.57 0.43 l h</path>
+</group></symbol>
+<symbol name="arrow/arc(spx)">
+<path pen="sym-pen" stroke="sym-stroke" fill="sym-stroke">
+0 0 m -1.0 0.333 l -1.0 -0.333 l h</path></symbol>
+<symbol name="arrow/farc(spx)">
+<path pen="sym-pen" stroke="sym-stroke" fill="white">
+0 0 m -1.0 0.333 l -1.0 -0.333 l h</path></symbol>
+<symbol name="arrow/fnormal(spx)">
+<path pen="sym-pen" stroke="sym-stroke" fill="white">
+0 0 m -1.0 0.333 l -1.0 -0.333 l h</path></symbol>
+<symbol name="arrow/pointed(spx)">
+<path pen="sym-pen" stroke="sym-stroke" fill="sym-stroke">
+0 0 m -1.0 0.333 l -0.8 0 l -1.0 -0.333 l h</path></symbol>
+<symbol name="arrow/fpointed(spx)">
+<path pen="sym-pen" stroke="sym-stroke" fill="white">
+0 0 m -1.0 0.333 l -0.8 0 l -1.0 -0.333 l h</path></symbol>
+<symbol name="arrow/linear(spx)">
+<path pen="sym-pen" stroke="sym-stroke">
+-1.0 0.333 m 0 0 l -1.0 -0.333 l</path></symbol>
+<symbol name="arrow/fdouble(spx)">
+<path pen="sym-pen" stroke="sym-stroke" fill="white">
+0 0 m -1.0 0.333 l -1.0 -0.333 l h
+-1 0 m -2.0 0.333 l -2.0 -0.333 l h
+</path></symbol>
+<symbol name="arrow/double(spx)">
+<path pen="sym-pen" stroke="sym-stroke" fill="sym-stroke">
+0 0 m -1.0 0.333 l -1.0 -0.333 l h
+-1 0 m -2.0 0.333 l -2.0 -0.333 l h
+</path></symbol>
+
+<preamble>
+\pdfobjcompresslevel0
+%%==== packages
+\usepackage{times}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+
+%%==== redeclare fonts
+%\renewcommand{\familydefault}{\sfdefault}
+%\DeclareSymbolFont{operators}{OT1}{cmss}{m}{n}
+%\DeclareSymbolFont{bold}{OT1}{cmss}{bx}{n}
+
+%==== settings %%%%%%%%%%%%%%%
+\makeatletter
+\def\title#1{\def\displaytitle{#1}} % Title 
+\def\subtitle#1{\def\displaysubtitle{#1}} % Display Title
+\def\author#1{\def\displayauthor{#1}} % Display author
+\def\affiliation#1{\def\displayaffiliation{#1}} % Display affiliation
+\makeatother
+
+% customize pagetitle and rule.
+\renewcommand{\PageTitle}[1]{%
+\makebox[0pt][l]{\rule[-.4\baselineskip]{200pt}{2pt}}%
+\textcolor{ddred}{\bf #1}}
+
+\title{Compressive Sensing via Block Sparse Bayesian Learning : Theory and Applications}%
+\subtitle{A Short Introduction}%
+\author{Liu Benyuan}%
+\affiliation{The Automatic Target Recognition (ATR) Laboratory}%
+
+%==== customize
+\def\labelitemi{\large\textcolor{ocean}{$\bullet$}}
+\renewcommand{\labelenumi}{\fbox{\Roman{enumi}}}
+\newcommand{\ve}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\abs}[1]{\ensuremath{\vert #1\vert}}
+\newcommand{\norm}[1]{\ensuremath{\Vert #1\Vert}}
+\newcommand{\abbr}{\ensuremath{\stackrel{\text{\tiny abbr.}}{=}}}
+\newcommand{\snow}[1]{\ensuremath{\stackrel{\ast}{#1}}}
+
+%%==== ppt layout
+\makeatletter
+\leftmargini 1.5em
+\leftmargin \leftmargini
+\leftmarginii  1.2em
+\leftmarginiii 1em
+\def\@listI{\leftmargin\leftmargini
+            \parsep \z@
+	         \partopsep 3pt
+	         \topsep \z@
+            \itemsep \z@}
+\@listI
+\def\@listii {\leftmargin\leftmarginii
+              \labelwidth\leftmarginii
+              \advance\labelwidth-\labelsep
+              \topsep    \z@
+              \parsep    \z@
+              \itemsep   \parsep}
+\def\@listiii{\leftmargin\leftmarginiii
+              \labelwidth\leftmarginiii
+              \advance\labelwidth-\labelsep
+              \topsep    \z@
+              \parsep    \z@
+              \partopsep \z@
+              \itemsep   \topsep}
+\makeatother
+</preamble>
+<layout paper="800 600" origin="32 0" frame="736 528" skip="32" crop="no"/>
+<titlestyle pos="0 554" size="large" color="ddred"  
+	    halign="left" valign="baseline"/>
+
+<symbol name="Background" xform="yes">
+<group>
+
+<group>
+<path matrix="1 0 0 1 0 4" fill="lgray">
+768 -8 m
+768 600 l
+-32 600 l
+-32 -8 l
+h
+-20 52 m
+-20 584 l
+756 584 l
+756 52 l
+h
+</path>
+<path stroke="chese" pen="heavier">
+-20 588 m
+-20 56 l
+756 56 l
+756 588 l
+h
+</path>
+<group matrix="1 0 0 1 8 -1">
+<path matrix="0.379947 0 0 0.379947 641.217 23.3008" stroke="gold" fill="gold">
+118.183 1 -1 118.183 141.817 59 e
+</path>
+<path matrix="0.379947 0 0 0.379947 640.387 18.3614" stroke="black" fill="blue">
+112.071 0 0 112.071 144 72 e
+</path>
+<path matrix="0.379947 0 0 0.379947 641.217 25.9604" stroke="gold">
+82.1825 0 0 82.1825 141.817 72 e
+</path>
+<text matrix="0.379947 0 0 0.379947 639.256 20.3008" transformations="translations" pos="84 -28" stroke="gold" type="label" valign="baseline">\tiny\bf 1~~9~~5~~3</text>
+<path matrix="0.27139 0 0 0.379947 612.558 -87.6436" stroke="gold" fill="gold">
+184 284 m
+228 296
+272 292
+284 288
+284 288
+284 284
+284 280
+316 280
+316 280
+316 288
+316 288
+356 296
+392 296
+412 288
+412 288
+396 336
+396 336
+328 336
+300 324
+300 324
+272 340
+204 332
+204 332
+184 284 s
+189.897 288 m
+231.659 299.143
+273.421 295.429
+284.811 291.714
+284.811 291.714
+284.811 288
+284.811 284.286
+315.183 284.286
+315.183 284.286
+315.183 291.714
+315.183 291.714
+353.149 299.143
+387.317 299.143
+406.3 291.714
+406.3 291.714
+391.114 336.286
+391.114 336.286
+326.573 336.286
+299.997 325.143
+299.997 325.143
+273.421 340
+208.88 332.571
+208.88 332.571
+189.897 288 s
+</path>
+<path matrix="0.136043 0 0 0.379947 675.614 27.8601" stroke="gold" dash="dashed">
+80.0999 0 0 80.0999 144 68 e
+</path>
+<path matrix="0.0837565 0.107203 -0.299402 0.233918 697.423 14.7538" stroke="gold" dash="dashed">
+80.0999 0 0 80.0999 144 68 e
+</path>
+<path matrix="-0.0837565 0.107203 0.299402 0.233918 692.985 14.7538" stroke="gold" dash="dashed">
+80.0999 0 0 80.0999 144 68 e
+</path>
+<group matrix="0.251346 0 0 0.251346 676.101 24.26">
+<path matrix="1 0 0 1 -224 -324" stroke="gold" fill="red">
+272 468 m
+300 556 l
+328 468 l
+412 468 l
+344 416 l
+368 332 l
+296 388 l
+228 332 l
+256 420 l
+188 468 l
+h
+</path>
+<path stroke="gold" fill="gold">
+64 116 m
+72 116 l
+60 96 l
+h
+</path>
+<path stroke="gold" fill="gold">
+64 128 m
+64 124 l
+84 124 l
+92 96 l
+88 128 l
+h
+</path>
+<path matrix="1 0 0 1 -88 8" stroke="gold" fill="gold">
+144 76 m
+148 80 l
+184 80 l
+184 84 l
+188 76 l
+h
+</path>
+</group>
+<path matrix="0.27139 0 0 0.379947 612.558 -87.6436" stroke="gold">
+196 284 m
+228 292
+276 288
+280 284
+280 284 s
+</path>
+<path matrix="0.27139 0 0 0.379947 612.558 -87.6436" stroke="gold">
+320 284 m
+360 292
+384 292
+400 288 s
+</path>
+</group>
+</group>
+
+<text pos="0 0" stroke="black" size="foot">
+\begin{minipage}{736pt}
+\vspace*{.5em}
+\begin{minipage}{650pt}\Large
+\textcolor{dgray}{
+{\bf \displayauthor{}}~~$\cdot$~~{\bf \displayaffiliation{}}~\hfill$\cdot$\hfill~{\bf NUDT}} \\
+\textcolor{blue}{
+\bf \displaytitle{}\hfill \today{}}
+\end{minipage}
+\hspace*{8em}
+\vspace*{.5em}
+\end{minipage}
+</text>
+
+</group>
+</symbol>
+
+<symbol name="Titlepage" xform="yes">
+<group>
+<path fill="chese">
+-32 480 m
+-32 256 l
+768 256 l
+768 480 l
+h
+</path>
+<text matrix="1 0 0 1 0 32" transformations="translations" pos="-32 416" stroke="black" type="minipage" width="800" height="49.9716" depth="36.092" valign="top" style="center">\Large\bf \textcolor{white}{\displaytitle}</text>
+<text transformations="translations" pos="-32 240" stroke="black" type="minipage" width="800" height="21.924" depth="7.952" valign="top" style="center">\large\bf \textcolor{black}{\displayauthor}</text>
+<text transformations="translations" pos="-32 192" stroke="black" type="minipage" width="800" height="19.4376" depth="5.46" valign="top" style="center">\bf \textcolor{dgray}{\displayaffiliation}</text>
+<text transformations="translations" pos="-32 320" stroke="black" type="minipage" width="800" height="19.4376" depth="5.46" valign="top" style="center">\bf \textcolor{white}{\displaysubtitle}</text>
+</group>
+</symbol>
+
+<pagenumberstyle pos="10 20" size="large" color="red"/> 
+
+</ipestyle>
