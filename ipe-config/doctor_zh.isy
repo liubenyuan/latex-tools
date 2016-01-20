@@ -11,8 +11,8 @@
 <color name="beach" value="0.93725 0.92549 0.79216"/>
 <color name="lblue" value="0.67451 0.81176 0.98824"/>
 <color name="lgree" value="0.78824 0.84314 0.52941"/>
-<color name="lgray" value="0.81961 0.82882 0.74118"/>
-<color name="dgray" value="0.41961 0.42882 0.34118"/>
+<color name="lgray" value="0.87961 0.87961 0.87961"/>
+<color name="dgray" value="0.41961 0.41961 0.41961"/>
 <color name="ocean" value="0.015686 0.388235 0.501961"/>
 <color name="deepb" value="0 0.18431 0.18431"/>
 <color name="green" value="0.27451 0.53725 0.40000"/>
@@ -24,6 +24,10 @@
 <color name="blue" value="0 0 1.0"/>
 <color name="yellow" value="1.0 1.0 0"/>
 <color name="gold" value="1.0 0.843 0"/>
+<color name="lightr" value="0.99 0.55 0.55"/>
+<color name="lightg" value="0.46 0.99 0.66"/>
+<color name="lightb" value="0.81 0.86 0.95"/>
+<color name="lightbb" value="0.67451 0.71176 0.88824"/>
 <dashstyle name="dashed" value="[4] 0"/>
 <dashstyle name="dotted" value="[1 3] 0"/>
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
