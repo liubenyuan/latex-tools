@@ -169,7 +169,10 @@ end="\end{itemize}"/>
 \defaultfontfeatures{Mapping=tex-text}
 \xeCJKsetcharclass{"0}{"2E7F}{0}
 \xeCJKsetcharclass{"2E80}{"FFFF}{1}
-%
+
+%---- offset text when placed at the bottom
+\def\moveup#1{\raise.2em\hbox{#1}}
+%----
 \renewcommand\normalsize{%
 \fontsize{12bp}{12.87bp}\selectfont%
 }
