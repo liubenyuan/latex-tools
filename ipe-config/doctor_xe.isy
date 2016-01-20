@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipestyle SYSTEM "ipe.dtd">
-<ipestyle name="doctor CJK">
+<ipestyle name="doctor Xe">
 <color name="ivyblue" value="0.1922 0.3961 0.6824"/>
 <color name="ivydark" value="0.0824 0.2235 0.3490"/>
 <color name="ivypurp" value="0.8039 0.3569 0.5569"/>
@@ -138,13 +138,8 @@ end="\end{itemize}"/>
 % dont forget to set OSFONTDIR=
 \usepackage{amsmath,amssymb,bm}
 \usepackage{graphicx}
+\usepackage[no-math]{xeCJK}
 
-\usepackage[CJKchecksingle,no-math]{xeCJK}
-
-% Adobe Pro Fonts
-\setmainfont{Adobe Garamond Pro} % Warnock Pro, Adobe Garamond Pro
-\setsansfont{Myriad Pro} % Myriad Pro, DINPro
-\setmonofont{Latin Modern Mono}
 % Using Founder Family Fonts
 \setCJKmainfont[BoldFont={FZYaSong-DB-GBK}]{FZShuSong_GB18030-Z01}
 \setCJKsansfont{FZHei-B01} % Hei
@@ -159,6 +154,10 @@ end="\end{itemize}"/>
 \newcommand{\fs}{\CJKfamily{fs}}
 \newcommand{\kai}{\CJKfamily{kai}}
 \newcommand{\hei}{\CJKfamily{hei}}
+% Using TeX Gyre
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{TeX Gyre Cursor}
 % define math commands
 \newcommand{\ve}[1]{\ensuremath{\mathbf{#1}}}
 \newcommand{\abs}[1]{\ensuremath{\vert #1\vert}}
@@ -166,6 +165,11 @@ end="\end{itemize}"/>
 \newcommand{\abbr}{\ensuremath{\stackrel{\text{\tiny abbr.}}{=}}}
 \newcommand{\snow}[1]{\ensuremath{\stackrel{\ast}{#1}}}
 	
+% patch of xunicode
+\defaultfontfeatures{Mapping=tex-text}
+\xeCJKsetcharclass{"0}{"2E7F}{0}
+\xeCJKsetcharclass{"2E80}{"FFFF}{1}
+%
 \renewcommand\normalsize{%
 \fontsize{12bp}{12.87bp}\selectfont%
 }
