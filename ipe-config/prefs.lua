@@ -97,7 +97,7 @@ prefs.tools = {
 }
 
 -- Should LaTeX be run automatically every time text has changed?
-prefs.auto_run_latex = true
+prefs.auto_run_latex = false
 
 -- Should the external editor be called automatically?
 prefs.auto_external_editor = nil
