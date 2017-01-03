@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipestyle SYSTEM "ipe.dtd">
-<ipestyle name="doctor Xe">
+<ipestyle name="doctor Xe En">
 <color name="ivyblue" value="0.1922 0.3961 0.6824"/>
 <color name="ivydark" value="0.0824 0.2235 0.3490"/>
 <color name="ivypurp" value="0.8039 0.3569 0.5569"/>
@@ -9,6 +9,7 @@
 <color name="sandy" value="0.90196 0.88627 0.68627"/>
 <color name="stone" value="0.65490 0.63922 0.49412"/>
 <color name="beach" value="0.93725 0.92549 0.79216"/>
+<color name="lblue" value="0.67451 0.81176 0.98824"/>
 <color name="lgree" value="0.78824 0.84314 0.52941"/>
 <color name="lgray" value="0.87961 0.87961 0.87961"/>
 <color name="dgray" value="0.41961 0.41961 0.41961"/>
@@ -23,10 +24,6 @@
 <color name="blue" value="0 0 1.0"/>
 <color name="yellow" value="1.0 1.0 0"/>
 <color name="gold" value="1.0 0.843 0"/>
-<color name="ultralred" value="1.0 0.87961 0.87961"/>
-<color name="ultralgreen" value="0.87961 1.0 0.87961"/>
-<color name="ultralblue" value="0.87961 0.87961 1.0"/>
-<color name="ultralyellow" value="1.0 1.0 0.87961"/>
 <color name="lightr" value="0.99 0.55 0.55"/>
 <color name="lightg" value="0.46 0.99 0.66"/>
 <color name="lightb" value="0.81 0.86 0.95"/>
@@ -137,47 +134,14 @@ end="\end{itemize}"/>
 end="\end{itemize}"/>
 
 <preamble>
-% \pdfobjcompresslevel0
-% dont forget to set OSFONTDIR=
 \usepackage{amsmath,amssymb,bm}
 \usepackage{graphicx}
 \usepackage[no-math]{xeCJK}
+\setmainfont{Times New Roman PS Std}
 
-% Using Founder Family Fonts
-\setCJKmainfont[BoldFont={FZYaSong-DB-GBK}]{FZShuSong_GB18030-Z01}
-\setCJKsansfont{FZHei-B01} % Hei
-\setCJKmonofont{FZFangSong-Z02} % fs
-% alias
-\setCJKfamilyfont{song}{FZShuSong_GB18030-Z01}
-\setCJKfamilyfont{hei}{FZHei-B01}
-\setCJKfamilyfont{fs}{FZFangSong-Z02} % fang-song
-\setCJKfamilyfont{kai}{FZKai-Z03} % Kai
-% redefine commands
-\newcommand{\song}{\CJKfamily{song}}
-\newcommand{\fs}{\CJKfamily{fs}}
-\newcommand{\kai}{\CJKfamily{kai}}
-\newcommand{\hei}{\CJKfamily{hei}}
-% Using TeX Gyre
-\setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{TeX Gyre Cursor}
-% define math commands
-\newcommand{\ve}[1]{\ensuremath{\mathbf{#1}}}
-\newcommand{\abs}[1]{\ensuremath{\vert #1\vert}}
-\newcommand{\norm}[1]{\ensuremath{\Vert #1\Vert}}
-\newcommand{\abbr}{\ensuremath{\stackrel{\text{\tiny abbr.}}{=}}}
-\newcommand{\snow}[1]{\ensuremath{\stackrel{\ast}{#1}}}
-	
-% patch of xunicode
-\defaultfontfeatures{Mapping=tex-text}
-\xeCJKsetcharclass{"0}{"2E7F}{0}
-\xeCJKsetcharclass{"2E80}{"FFFF}{1}
-
-%---- offset text when placed at the bottom
-\def\moveup#1{\raise.2em\hbox{#1}}
-%----
+%
 \renewcommand\normalsize{%
-\fontsize{12bp}{12.87bp}\selectfont%
+\fontsize{12bp}{14bp}\selectfont%
 }
 </preamble>
 
