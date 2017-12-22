@@ -4,10 +4,10 @@
 %%
 %% Macros written by Vytas Statulevicius, VTeX, Lithuania
 %% for the BioMed Central
-%% Please submit bugs or your comments to vytas@vtex.lt
+%% Please submit bugs or your comments to latex-support@vtex.lt
 %%
 %% The original distribution is located at:
-%% http://support.e-publications.org/bmc
+%% http://www.biomedcentral.com/authors/tex
 %%
 %% This class file loads standart "article.cls" with appropriate 
 %% settings and then redefines layout according to BMC style
@@ -43,7 +43,7 @@
 %% at end of file
 
 \def\bmcart@name{bmcart.cls}
-\def\bmcart@version{2012/06/27}
+\def\bmcart@version{2017/07/31}
 
 \NeedsTeXFormat{LaTeX2e}
 
@@ -161,7 +161,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Initiate some info:
 %\def\journal@name{Submitted to BioMed Central}
 \let\journal@name\@empty
-\def\journal@url{http://www.bmc.com/}
+\def\journal@url{http://www.biomedcentral.com/}
 \def\journal@id{-bmc}
 \def\paper@url{}
 \def\info@line{}
@@ -503,17 +503,17 @@
  \check@doiurl@break#1\\\end\relax%
  \if@doiurlbreak%
     \@ifundefined{doi@url}{%
-       \href{\doi@base\@tempx\@tempy}{\csname doi@size\endcsname\@tempx}%
+       \ims@href{\doi@base\@tempx\@tempy}{\csname doi@size\endcsname\@tempx}%
        \break%
-       \href{\doi@base\@tempx\@tempy}{\csname doi@size\endcsname\@tempy}}%
+       \ims@href{\doi@base\@tempx\@tempy}{\csname doi@size\endcsname\@tempy}}%
                           {%
-       \expandafter\href{\@tempx\@tempy}{\csname doi@size\endcsname\@tempx}%
+       \expandafter\ims@href{\@tempx\@tempy}{\csname doi@size\endcsname\@tempx}%
        \break%
-       \href{\@tempx\@tempy}{\csname doi@size\endcsname\@tempy}}%
+       \ims@href{\@tempx\@tempy}{\csname doi@size\endcsname\@tempy}}%
  \else%
     \@ifundefined{doi@url}%
-        {\href{\doi@base#1}{\csname doi@size\endcsname #1}}%
-        {\href{#1}{\csname doi@size\endcsname #1}}%
+        {\ims@href{\doi@base#1}{\csname doi@size\endcsname #1}}%
+        {\ims@href{#1}{\csname doi@size\endcsname #1}}%
  \fi}}
 
 
@@ -544,17 +544,17 @@
  \check@arxivurl@break#1\\\end\relax%
  \if@arxivurlbreak%
     \@ifundefined{arxiv@url}{%
-       \href{\arxiv@base\@tempx\@tempy}{\csname arxivurl@size\endcsname\@tempx}%
+       \ims@href{\arxiv@base\@tempx\@tempy}{\csname arxivurl@size\endcsname\@tempx}%
        \break%
-       \href{\arxiv@base\@tempx\@tempy}{\csname arxivurl@size\endcsname\@tempy}}%
+       \ims@href{\arxiv@base\@tempx\@tempy}{\csname arxivurl@size\endcsname\@tempy}}%
                             {%
-       \expandafter\href{\@tempx\@tempy}{\csname arxivurl@size\endcsname\@tempx}%
+       \expandafter\ims@href{\@tempx\@tempy}{\csname arxivurl@size\endcsname\@tempx}%
        \break%
-       \href{\@tempx\@tempy}{\csname arxivurl@size\endcsname\@tempy}}%
+       \ims@href{\@tempx\@tempy}{\csname arxivurl@size\endcsname\@tempy}}%
  \else%
     \@ifundefined{arxiv@url}%
-        {\href{\arxiv@base#1}{\csname arxivurl@size\endcsname #1}}%
-        {\href{#1}{\csname arxivurl@size\endcsname #1}}%
+        {\ims@href{\arxiv@base#1}{\csname arxivurl@size\endcsname #1}}%
+        {\ims@href{#1}{\csname arxivurl@size\endcsname #1}}%
  \fi}}
 
 
@@ -1069,9 +1069,13 @@
    \ifnum\@tempcnta=1\relax%
 %      \define@key{author}{addressref}{}%
 %      \define@key{author}{presentaddressref}{}%       
-      \define@key{author}{corref}{}%
+        \@tempcntb=1\relax
+        \@ifundefined{num@author}{}{\@tempcntb=\num@author\relax}%
+        \ifnum\@tempcntb=\@ne
+          \define@key{author}{corref}{}%
+        \fi
       \global\let\address@thanksref\@gobble
-      \global\let\printaddresses\relax
+%       \global\let\printaddresses\relax
    \fi%
    \@tempcnta=0\relax%
    \@ifundefined{num@author}{}{\@tempcnta=\num@author\relax}%
@@ -1081,7 +1085,7 @@
 %      \define@key{author}{presentaddressref}{\expandafter\gdef\csname presentaddressref@##1\endcsname{}}%       
 %      \gdef\printauthor##1{\unskip}%
       \global\let\address@thanksref\@gobble
-      \global\let\printaddresses\relax
+%       \global\let\printaddresses\relax
       \global\let\corref@thanksmark\@gobble
       \global\let\corref@thanksref\@gobble
    \fi%
@@ -1157,7 +1161,9 @@
 %    \corref@list={aff1,aff2}%
      \global\let\set@authorcorref@notset\relax%
      \global\author@correftrue%
-     \ifx.#1.\else\xdef\corref@list{#1}\fi%
+     \ifx.#1.\else
+      \@ifundefined{corref@list}{\xdef\corref@list{#1}}{\xdef\corref@list{\corref@list,#1}}%
+     \fi%
 }
 
   \def\add@to@addressref@list#1{\@ifundefined{addressref@list}{\edef\addressref@list{#1}}{\edef\addressref@list{\addressref@list, #1}}}
@@ -1175,7 +1181,7 @@
 
   \def\print@author@lists{%
       \@ifundefined{addressref@list}{}{\address@thanksref{\addressref@list}}%
-      \ifauthor@corref\def\thanksref@sep{}\corref@thanksref{\corr@author@id}\fi%
+      \ifauthor@corref\def\thanksref@sep{}\corref@thanksref{bmc@corref@author}\fi%
       \@ifundefined{thanksref@list}{}{\def\thanksref@sep{}\thanksref{\thanksref@list}}%
 }
 
@@ -1216,9 +1222,13 @@
     \fi%
   \fi%
   \ifauthor@corref%
-     \xdef\corr@author@id{\author@id}%
+     \@ifundefined{corr@author@id}{\xdef\corr@author@id{\author@id}}{\xdef\corr@author@id{\corr@author@id,\author@id}}%
      \@ifundefined{corref@list}%
-       {\@ifundefined{current@address@list}{}{\xdef\corref@list{\current@address@list}}}%
+       {\@ifundefined{current@address@list}{}{%
+         \xdef\corref@list{\current@address@list}%
+         \@ifundefined{corref@list}{\xdef\corref@list{\current@address@list}}%
+            {\xdef\corref@list{\corref@list,\current@address@list}}%
+       }}%
        {}%
   \fi%
 %
@@ -1436,7 +1446,13 @@
 \def\auto@set@thanksbox{%
   \@thanksbox[]{%
     \@ifundefined{corr@author@id}{}{\printcorrtext{\corr@author@id}}%
-    \@ifundefined{corref@list}{}{\@for\address@id:=\corref@list\do{\printaddress{\address@id}}\par}%
+    \@ifundefined{corref@list}{}{%
+      \@for\address@id:=\corref@list\do{%
+        \@ifundefined{tmp@address@id@\address@id @done@for@corref}{%
+          \global\@namedef{tmp@address@id@\address@id @done@for@corref}{1}%
+          \printaddress{\address@id}}{}%
+      \par}%
+    }%
     \authorinfo@text
     \printartnotes%
     \par
@@ -1457,9 +1473,10 @@
 %\printcorrtext{<corrauthor@id>}
 
 \def\printcorrtext#1{%
-  \corref@thanksmark{#1}%
+  \corref@thanksmark{bmc@corref@author}%
   \corref@text%
-  \@ifundefined{r@#1@email}{}{\printead*{#1}}%
+  \def\ead@sep{; }%
+  \printead*{#1}%
   \par
 }
 
@@ -1812,4 +1829,6 @@
 
 \endinput
 %%
+%% History:
+%% 2014.01.24 - \href in \doiurl replaced with \ims@href
 %% End of file `bmcart.cls'.
