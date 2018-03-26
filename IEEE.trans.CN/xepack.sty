@@ -1,0 +1,42 @@
+\ProvidesPackage{xepack}
+
+%%%% non-standard IEEE math & fonts
+%\RequirePackage[T1]{fontenc}
+%\RequirePackage{amsmath}
+%\RequirePackage[amsbb,eufrak,compatiblegreek,subscriptcorrection,nofontinfo]{mtpro2}
+%\interdisplaylinepenalty=2500
+%\RequirePackage{bm}
+%\RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
+
+%%%% Chinese character support
+\RequirePackage[CJKnumber,CJKchecksingle,no-math]{xeCJK}
+\RequirePackage[stretch=10]{microtype} % slightly tweaking font spacing for aesthetic
+\RequirePackage{setspace}
+\onehalfspacing%
+
+%%%% hypers & refs
+%\RequirePackage[numbers,sort&compress]{natbib}
+%\RequirePackage{url}
+
+%%%% setup chinese fonts
+\defaultfontfeatures{Mapping=tex-text}
+\xeCJKsetcharclass{"0}{"2E7F}{0}
+\xeCJKsetcharclass{"2E80}{"FFFF}{1}
+
+%\setmainfont{Warnock Pro}
+%\setsansfont{Myriad Pro}
+%\setmonofont{Inconsolata}
+
+\setmainfont{Times New Roman PS Std}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+%\setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong_GB18030-Z01}
+%\setCJKsansfont{FZHei-B01}
+%\setCJKmonofont{FZKai-Z03}
+
+%\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKmainfont[BoldFont={STZhongsong},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Kaiti Std}
+
