@@ -6,4 +6,5 @@
 *.gz
 *.out
 *.thm
+!diagram.pdf
 

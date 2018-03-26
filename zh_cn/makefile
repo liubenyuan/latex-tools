@@ -1,4 +1,4 @@
-pdf:
+pdf: trek.tex
 	xelatex trek
 	bibtex trek
 	bibtex trek
