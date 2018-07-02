@@ -1,0 +1,575 @@
+%
+% 1. 博士期间通用模板
+% 2. 国防工业出版社翻译书籍模板
+% 3. 国防工业出版社翻译书籍模板小16k
+%
+% liubenyuan <liubenyuan@gmail.com>
+% 2018-06-30
+%
+\ProvidesPackage{bookzh16k}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 下面对各个条目进行控制
+% 0. 宏包加载
+% 1. 符号列表
+% 2. 字体设置, 字体大小设置, 中文化的名称
+% 3. 版面设置, 各个浮动体的段前段后, 占据比例, 页眉页脚等
+% 4. 公式定理, 问题解答, 算法等环境
+% 5. 章节标题, TOC设置, chapter定义微调, bib微调
+% 6. 自定义的一些方便命令
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% 在文章的开始\begin{document}模板自动加上了： 选择正文字体
+%% (用户不要再用**任何**版面微调命令)
+%\renewcommand{\baselinestretch}{1.5}%
+%\normalsize%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifisttf\isttftrue
+\DeclareOption{otf}{\isttffalse}
+\ProcessOptions\relax
+
+\RequirePackage{calc}
+%==== 国防工业出版社，1/16规格，版心140x215mm，成品184x260mm, 39行，38字每面
+%\RequirePackage[papersize={18.4cm,26.0cm},text={14.2cm,21.5cm}]{geometry}%
+%\RequirePackage[papersize={18.4cm,26.0cm},text={14.2cm,21.5cm}]{geometry}%
+%==== 国防工业出版社，1/32规格平装，版心100x158mm, 成品130x184mm，订口36mm，翻口36mm，地脚30mm，天头48mm。30行，750字每面
+%==== 国防工业出版社，1/32规格精装，版心100x153mm, 成品130x184mm，订口32mm，翻口36mm，地脚30mm，天头48mm。30行，750字每面
+%==== 国防工业出版社显示出血，1/32规格精装
+%\RequirePackage[papersize={13.0cm, 18.4cm}, text={10cm, 15.3cm}]{geometry}%
+%\RequirePackage[papersize={13.0cm, 18.4cm}, text={10cm, 15.3cm},showframe,showcrop]{geometry}%
+%==== 国防工业出版社，小1/16规格平装，版心125x197mm, 成品170x240mm，订口32mm，翻口36mm，地脚30mm，天头48mm。30行，750字每面
+%\RequirePackage[papersize={17.0cm, 24.0cm}, text={12.5cm, 19.7cm}]{geometry}%
+\RequirePackage[papersize={17.0cm, 24.0cm}, text={12.5cm, 19.7cm}, showframe, showcrop]{geometry}%
+\geometry{headheight=10mm, headsep=6mm, footskip=8mm}%
+\geometry{top=25mm, right=25mm, bindingoffset=0mm}%
+%==== 
+
+\RequirePackage[pagestyles,newparttoc]{titlesec}
+\RequirePackage{titletoc}
+% Chinese style footnote
+\RequirePackage[perpage,symbol*]{footmisc}
+\RequirePackage{pifont}
+% figures
+\RequirePackage{graphicx}
+\RequirePackage[config]{subfig}
+\RequirePackage{float}
+% tables
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+\RequirePackage{slashbox}
+\RequirePackage[neverdecrease]{paralist}
+\RequirePackage{xcolor}
+\RequirePackage{colortbl}
+% math & fonts--------------------------------------------------%%
+\RequirePackage[T1]{fontenc}
+\ifisttf
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{txfonts} % beautiful with bold letters
+\RequirePackage[Symbolsmallscale]{upgreek} % Symbolsmallscale
+\interdisplaylinepenalty=2500
+\else% OTF is for professional MATH fonts
+\RequirePackage{amsmath}
+\RequirePackage[amsbb,eufrak,slantedGreek,compatiblegreek,subscriptcorrection,nofontinfo]{mtpro2}
+\interdisplaylinepenalty=2500
+\fi
+\RequirePackage{bm}
+%---------------------------------------------------------------%%
+\RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
+\RequirePackage[CJKnumber,CJKchecksingle,no-math]{xeCJK}
+\RequirePackage{indentfirst}
+% hypers & refs
+\RequirePackage[numbers,sort&compress]{natbib}
+%--
+%\RequirePackage[sort&compress]{natbib}
+%\setcitestyle{square,aysep={},yysep={;}}
+%\renewcommand{\cite}[1]{\citep{#1}}
+%--
+\RequirePackage{url}
+\RequirePackage{xcolor}
+%\RequirePackage[CJKbookmarks=true,colorlinks,linkcolor=blue,citecolor=red,pdfborder=0 1 1]{hyperref}
+\RequirePackage[CJKbookmarks=true,colorlinks=false,pdfborder=0 0 0]{hyperref}
+\RequirePackage{cases,listings}
+\RequirePackage{fancyvrb}
+\RequirePackage[chapter]{algorithm}
+\RequirePackage{algorithmic}
+
+%==============================================================================
+% 0. 符号表 
+\RequirePackage[intoc,norefeq,refpage]{nomencl}
+\renewcommand{\nomname}{重要符号表}
+\renewcommand{\nomgroup}[1]{}%
+% 1. 定制nom条目
+\def\pagedeclaration#1{\nobreakspace#1}%
+\def\@@nomenclature[#1]#2#3#4{\endgroup\@esphack}
+\def\@@@nomenclature[#1]#2#3#4{%
+ \def\@tempa{#2}\def\@tempb{#3}%
+ \protected@write\@nomenclaturefile{}%
+  {\string\nomenclatureentry{#1\nom@verb\@tempa @{\nom@verb\@tempa}&%
+      \begingroup\nom@verb\@tempb\endgroup &\begingroup#4\endgroup&%
+      \begingroup\protect%
+        |nompageref}{\thepage}}%
+ \endgroup%
+ \@esphack}
+% 2. 定制nom表格
+\def\thenomenclature{%
+  \@ifundefined{chapter}%
+  {
+    \section*{\nomname}
+    \if@intoc\addcontentsline{toc}{section}{\nomname}\fi%
+  }%
+  {
+    \chapter*{\nomname}
+    \if@intoc\addcontentsline{toc}{chapter}{\nomname}\fi%
+  }%
+\nompreamble%
+\begin{longtable}[c]{@{}lp{25em}ll@{}}%
+{\hei 符~号} & {\hei 定~义} && {\hei 页~码} \\
+}
+\def\endthenomenclature{%
+\end{longtable}%
+\nompostamble%
+}
+%==============================================================================
+
+%==============================================================================
+%%-- colors --%%
+\definecolor{bkcolor}{rgb}{0,0.541,0.855}
+
+%%-- patch of xunicode --%%
+\defaultfontfeatures{Mapping=tex-text}
+\xeCJKsetcharclass{"0}{"2E7F}{0}
+\xeCJKsetcharclass{"2E80}{"FFFF}{1}
+
+%%-- 英文/中文字体, 字号设置 --%%
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+%%-- Using Founder Family Fonts --%%
+\setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong_GB18030-Z01}
+\setCJKsansfont{FZHei-B01} % Hei
+\setCJKmonofont{FZKai-Z03} % Kai 
+\setCJKfamilyfont{song}{FZShuSong_GB18030-Z01}
+\setCJKfamilyfont{hei}{FZHei-B01}
+\setCJKfamilyfont{fs}{FZKai-Z03} % Kai
+\setCJKfamilyfont{kai}{FZKai-Z03} % Kai
+\setCJKfamilyfont{li}{FZKai-Z03} % Kai
+\setCJKfamilyfont{you}{FZKai-Z03} % Kai
+\setCJKfamilyfont{cusong}{FZXiaoBiaoSong-B05} % 小标宋
+%%-- Font Family --%%
+\newcommand{\cusong}{\CJKfamily{cusong}} % 小标宋作为加粗宋体
+\newcommand{\song}{\CJKfamily{song}}     % 宋体
+\newcommand{\fs}{\CJKfamily{fs}}         % 仿宋体
+\newcommand{\kai}{\CJKfamily{kai}}       % 楷体
+\newcommand{\hei}{\CJKfamily{hei}}       % 黑体
+\newcommand{\li}{\CJKfamily{li}}         % 隶书
+\newcommand{\you}{\CJKfamily{you}}       % 幼圆
+\def\songti{\song}
+\def\fangsong{\fs}
+\def\kaishu{\kai}
+\def\heiti{\hei}
+\def\lishu{\li}
+\def\youyuan{\you}
+\newlength\thu@linespace
+\newcommand{\thu@choosefont}[2]{%
+    \setlength{\thu@linespace}{#2*\real{#1}}%
+    \fontsize{#2}{\thu@linespace}\selectfont}
+\def\thu@define@fontsize#1#2{%
+    \expandafter\newcommand\csname #1\endcsname[1][\baselinestretch]{%
+    \thu@choosefont{##1}{#2}}}
+\thu@define@fontsize{chuhao}{42bp}
+\thu@define@fontsize{xiaochu}{36bp}
+\thu@define@fontsize{yihao}{26bp}
+\thu@define@fontsize{xiaoyi}{24bp}
+\thu@define@fontsize{erhao}{22bp}
+\thu@define@fontsize{xiaoer}{18bp}
+\thu@define@fontsize{sanhao}{16bp}
+\thu@define@fontsize{xiaosan}{15bp}
+\thu@define@fontsize{sihao}{14bp}
+\thu@define@fontsize{banxiaosi}{13bp}
+\thu@define@fontsize{xiaosi}{12bp}
+\thu@define@fontsize{dawu}{11bp}
+\thu@define@fontsize{wuhao}{10.5bp}
+\thu@define@fontsize{xiaowu}{9bp}
+\thu@define@fontsize{liuhao}{7.5bp}
+\thu@define@fontsize{xiaoliu}{6.5bp}
+\thu@define@fontsize{qihao}{5.5bp}
+\thu@define@fontsize{bahao}{5bp}
+\newcommand*{\ziju}[1]{\renewcommand{\CJKglue}{\hskip #1}}
+%% 中文化名称 %%
+\renewcommand\contentsname{目\hspace{1em}录}
+\renewcommand\listfigurename{图目录}
+\renewcommand\listtablename{表目录}
+\newcommand\listequationname{公式索引}
+\newcommand\equationname{公式}
+\renewcommand\bibname{参\kern.25em考\kern.25em文\kern.25em献}
+\renewcommand\indexname{索\hspace{1em}引}
+\renewcommand\figurename{\!图}
+\renewcommand\tablename{\!表}
+\renewcommand\appendixname{附\hspace{1em}录}
+
+%==============================================================================
+% 版面设置 
+%\setlength{\parskip}{0pt \@plus 1bp \@minus 1bp}
+\setlength{\parskip}{0pt} % no rubber space
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\setlength{\parindent}{2em}
+%==== cleardoublepage {add your BLANK sentence} ====
+\renewcommand\cleardoublepage{\clearpage\if@openright \ifodd\c@page\else
+  \newpage{}
+  \thispagestyle{empty}
+  \vspace*{\fill}
+  \begin{center}
+%  \emph{This Page is Intentially Left BLANK.}
+  \end{center}
+  \vspace*{\fill}
+  \clearpage\fi\fi%
+}
+%==== page layout fractions ====
+\setlength{\floatsep}{12bp \@plus 2bp \@minus 2bp}
+\setlength{\intextsep}{12bp \@plus 2bp \@minus 2bp}
+\setlength{\textfloatsep}{12bp \@plus 2bp \@minus 2bp}
+\setlength{\@fptop}{0bp \@plus 4bp}
+\setlength{\@fpsep}{12bp \@plus 4bp}
+\setlength{\@fpbot}{0bp \@plus 4bp}
+\renewcommand{\textfraction}{0.01}
+\renewcommand{\topfraction}{0.99}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\floatpagefraction}{0.90}
+\widowpenalty=10000%avoid single line per page
+\clubpenalty=10000
+%==== table/figure fonts, captions ====
+\setlength\arrayrulewidth{1pt}\arrayrulecolor[gray]{.4}
+\let\old@tabular\tabular
+\def\tabular{\liuhao[1.25]\old@tabular}
+\DeclareCaptionLabelFormat{thu}{{\fs\xiaowu[1.25] #1~\rmfamily #2}}
+\DeclareCaptionLabelSeparator{thu}{\hspace{1em}}
+\DeclareCaptionFont{thu}{\fs\xiaowu[1.25]}
+\captionsetup{labelformat=thu,labelsep=thu,font=thu}
+\captionsetup[table]
+{position=top,belowskip=0bp \@plus 1bp \@minus 1bp,aboveskip=6bp \@plus 1bp \@minus 1bp}%
+\captionsetup[figure]
+{position=bottom,belowskip=-3bp \@plus 1bp \@minus 1bp,aboveskip=6bp \@plus 1bp \@minus 1bp}%
+\captionsetup[subfloat]
+{labelformat=simple,font=thu,captionskip=6bp,nearskip=6bp,farskip=0bp,topadjust=0bp}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+\renewcommand{\thesubtable}{(\alph{subtable})}
+%==== 页面设置 ====%
+\renewcommand\setheadrule[1]{%
+  \ifdim#1=\z@
+    \let\makeheadrule\@empty
+  \else
+    \def\makeheadrule{%
+    \rule[-.3\baselineskip]{\linewidth}{1.1pt}}%
+  \fi}
+%==== 2013-09-05 ====
+% changed all color to black
+
+%==== preface matter ====
+\newpagestyle{plainbook_preafter}{
+\sethead[{\bf\xiaowu\textcolor{black}{\thepage}}][\song\xiaowu\@displaytitle][]{}{\song\xiaowu\chaptertitle}{{\bf\xiaowu\textcolor{black}{\thepage}}}%
+\setfoot{}{}{}%
+\headrule%
+%\footrule%
+}
+%==== mainmatter ====
+\newpagestyle{plainbook}{
+\sethead[{\bf\xiaowu\textcolor{black}{\thepage}}][\song\xiaowu\@displaytitle][]{}{\song\xiaowu 第{\thechapter}章~~~\chaptertitle}{{\bf\xiaowu\textcolor{black}{\thepage}}}%
+\setfoot{}{}{}%
+\headrule%
+%\footrule%
+}
+%==== appendix matter ====
+\newpagestyle{plainbook_appendix}{
+\sethead[{\bf\xiaowu\textcolor{black}{\thepage}}][\song\xiaowu\@displaytitle][]{}{\song\xiaowu 附录{\thechapter}~~~\chaptertitle}{{\bf\xiaowu\textcolor{black}{\thepage}}}%
+\setfoot{}{}{}%
+\headrule%
+%\footrule%
+}
+%==== simple numpaged ====
+\newpagestyle{simplebook}{%
+\sethead{}{}{}%
+\setfoot{}{{\bf\textcolor{black}{\thepage}}}{}%
+}
+%==== simple un-numpaged ====
+\renewpagestyle{plain}{%
+\sethead{}{}{}%
+\setfoot{}{}{}%
+}
+%==== Change -> Circled Footnote ====
+%\DefineFNsymbols{circled}{{\ding{192}}{\ding{193}}{\ding{194}}{\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
+\DefineFNsymbols{circled}{{\ding{172}}{\ding{173}}{\ding{174}}{\ding{175}}{\ding{176}}{\ding{177}}{\ding{178}}{\ding{179}}{\ding{180}}{\ding{181}}}
+\setfnsymbol{circled}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 定理, 定义, 问题, 解答, 算法环境 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{nonumberplain}
+\theorembodyfont{\rmfamily}
+\theoremheaderfont{\sffamily}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\theoremseparator{:\,}
+\newtheorem{proof}{证明}[section]
+\theoremstyle{plain}
+\theorembodyfont{\kai}
+\theoremheaderfont{\hei}
+\theoremsymbol{}
+\theoremseparator{:\,}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+%% 配置算法包
+\algsetup{indent=3em}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{已知:}}
+\renewcommand{\algorithmicensure}{\textbf{求:}}
+%% 配置Lstlisting
+\lstset{
+  columns=flexible,sensitive=true,lineskip=-3pt,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\ttfamily,
+  commentstyle=\color{red!50!green!50!blue!50},
+  numbers=left,numberstyle=\tiny,
+  xleftmargin=0.5em,xrightmargin=0.5em,aboveskip=0.5em,
+  showstringspaces=false,breaklines=true,extendedchars=true,escapeinside=``,
+  frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20}}
+\DefineVerbatimEnvironment{code}{Verbatim}%
+  {frame=lines,framerule=0.5mm,rulecolor=\color{black},%
+  fontseries=tt,xleftmargin=4mm,numbers=left,numbersep=1.5mm}
+
+
+%%%%%%%%%%%%%%
+%% 命令微调 %%
+%%%%%%%%%%%%%%
+%============= 重新定义chapter ================================================
+\renewcommand\chapter{\if@openright\clearpage\else\clearpage\fi
+                    \thispagestyle{empty}%
+                    \global\@topnum\z@
+                    \@afterindentfalse
+                    \secdef\nudt@chapter\@schapter}
+\def\nudt@chapter[#1]#2{
+  \ifnum \c@secnumdepth >\m@ne
+    \if@openright\clearpage\else\clearpage\fi
+    \phantomsection
+    \if@mainmatter
+      \refstepcounter{chapter}%
+      \addcontentsline{toc}{chapter}%
+        {\protect\numberline{\thechapter}#1}%
+    \else
+      \addcontentsline{toc}{chapter}{#1}%
+    \fi
+  \else
+    \addcontentsline{toc}{chapter}{#1}%
+  \fi
+  \chaptermark{#1}%
+  \if@twocolumn
+    \@topnewpage[\@makechapterhead{#2}]%
+  \else
+    \@makechapterhead{#2}%
+    \@afterheading
+  \fi
+}
+%============= 重新定义part ===================================================
+\renewcommand\part{\if@openright\clearpage\else\clearpage\fi%
+                   \thispagestyle{empty}%
+                   \if@twocolumn\onecolumn\@tempswatrue\else\@tempswafalse\fi%
+                   \null\vfil%
+                   \secdef\@part\@spart}
+%======== new itemize & enumerate ========
+\newenvironment{nitemize}{
+\begin{itemize}
+\setlength{\itemsep}{2bp}
+\setlength{\parskip}{0bp}
+}{\end{itemize}}
+\newenvironment{nenumerate}{
+\begin{enumerate}[{(}1{)}]
+\setlength{\itemsep}{2bp}
+\setlength{\parskip}{0bp}
+}{\end{enumerate}}
+
+%%-- Bibiography --%%
+\renewenvironment{thebibliography}[1]{%
+   \chapter*{\bibname} % DO NOT appear in TOC
+   \xiaowu[1.25]%
+   \list{\@biblabel{\@arabic\c@enumiv}}%
+        {\renewcommand{\makelabel}[1]{##1\hfill}
+         \settowidth\labelwidth{1.1cm}
+         \setlength{\labelsep}{0.4em}
+         \setlength{\itemindent}{0pt}
+         \setlength{\leftmargin}{\labelwidth+\labelsep}
+         \addtolength{\itemsep}{-0.7em}
+         \usecounter{enumiv}%
+         \let\p@enumiv\@empty
+         \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    \sloppy\frenchspacing
+    \clubpenalty1000%
+    \@clubpenalty\clubpenalty
+    \widowpenalty1000%
+    \interlinepenalty1000%
+    \sfcode`\.\@m}
+   {\def\@noitemerr
+    {\@latex@warning{Empty `thebibliography' environment}}%
+    \endlist\frenchspacing}
+
+%==============================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% 章节标题部分样式 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\setfootrule{1bp}
+\renewcommand\frontmatter{% 大写希腊，设定无编号页眉页脚，页码在上对开
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \@mainmatterfalse
+    \pagenumbering{Roman}
+    \pagestyle{plainbook_preafter}}
+\newcommand\midmatter{% 小写希腊，无页眉页脚
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \@mainmatterfalse
+    \pagenumbering{roman}
+    \pagestyle{simplebook}}
+\renewcommand\mainmatter{% 正文，设定页眉页脚，页码在上对开
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \@mainmattertrue
+    \pagenumbering{arabic}
+    \pagestyle{plainbook}}
+\renewcommand\backmatter{% 附录，设定附录页眉页脚
+    \if@openright\clearpage\else\clearpage\fi
+	\titleformat{\chapter}{\filcenter \bfseries\cusong\ziju{0.1em} \sanhao[1.25]}
+      {附录\,{\thechapter}\,}{1em}{}
+	\titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \hei \wuhao[1.5]} % 5H
+      {\makebox[4em][l]{附录\,{\thecontentslabel}\quad}}{}
+      {\hspace{.5em}\titlerule*{.}\contentspage}
+    \@mainmattertrue
+    \pagestyle{plainbook_appendix}}
+\newcommand\bibliomatter{% 文献，无页眉页脚，续编页
+    \if@openright\clearpage\else\clearpage\fi
+    \@mainmatterfalse
+    \pagestyle{plainbook_preafter}}
+\newcommand{\sectionbreak}{%
+\addpenalty{-300}%
+\vspace*{0pt}%
+}
+%========== TOC ===========%
+\titlecontents{part}[0pt]{\filcenter\vspace{0.25\baselineskip} \kai\banxiaosi[1.5]} % cusong
+    {第{\thecontentslabel}篇\quad}{}
+    {}
+\titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \sf \hei \wuhao[1.5]} % 5H
+    {\makebox[4.5em][l]{第{\thecontentslabel}章\quad}}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{section}[2em]{\songti \wuhao[1.25]} % 5S
+    {\makebox[2.5em][l]{\thecontentslabel\quad}}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{subsection}[4.6em]{\kai \wuhao[1.25]} % 5K
+    {\thecontentslabel\quad}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{figure}[0pt]{\hei \wuhao[1.25]} % song
+    {\makebox[3.5em][l]{图~\thecontentslabel\quad}}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{table}[0pt]{\hei \wuhao[1.25]} % song
+    {\makebox[3.5em][l]{表~\thecontentslabel\quad}}{}
+    {\hspace{.5em}\titlerule*{.}\contentspage}
+\setcounter{secnumdepth}{3}
+%======== DISPLAY ========%
+\titleformat{\part}[display]{\filleft\bfseries\cusong \erhao[1.25]}{第{\thepart}篇\,}{1em}{}
+%\titleformat{\chapter}{\filcenter\bfseries\cusong\ziju{0.1em} \sanhao[1.25]}{第{\thechapter}章}{1em}{}
+\titleformat{\chapter}[hang]
+{\bfseries\cusong\ziju{0.1em} \sanhao[1.25]}{第{\thechapter}章}{1em}{}[\vskip8pt{\titlerule[1.5pt]}]
+%\titleformat{\section}{\filcenter\sf\heiti\ziju{0.025em} \xiaosi[1.25]}{\thesection}{1em}{}
+\titleformat{\section}[hang]
+{\sf\heiti\ziju{0.025em} \xiaosi[1.25]}{\thesection}{1em}{}
+\titleformat{\subsection}{\sf\heiti\wuhao[1.25]}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\kai\wuhao[1.25]}{\thesubsubsection}{1em}{}
+% remove rubber space.
+\titlespacing{\chapter}{0pt}{3.2ex-\heightof{A}}{2.5ex}
+\titlespacing{\section}{0pt}{1.2ex-\heightof{a}}{1.2ex}
+\titlespacing{\subsection}{2em}{.55ex}{.55ex}
+\titlespacing{\subsubsection}{2em}{.55ex}{.55ex}
+%======== 正文字体 ========%
+\renewcommand\normalsize{%
+%\@setfontsize\normalsize{10.5bp}{11.0bp}%
+\@setfontsize\normalsize{10.5bp}{11.2bp}%
+\renewcommand{\baselinestretch}{1.3}%
+\setlength\abovedisplayskip{6bp \@plus 1.6bp \@minus 1.6bp}%
+\setlength\abovedisplayshortskip{6bp \@plus 1.2bp \@minus 1.2bp}%
+\setlength\belowdisplayskip{\abovedisplayskip}%
+\setlength\belowdisplayshortskip{\abovedisplayshortskip}%
+}
+
+%==============================================================================
+%%%%%%%%%%%%%%%%
+%% 自定义命令 %%
+%%%%%%%%%%%%%%%%
+% \renewcommand{\vec}[1]{\mathbf{\mathrm{#1}}}
+\newcommand{\eqhere}{\begin{equation}\color{red}1+e^{j\pi}=0\end{equation}}
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\oldvec{#1}\,}
+\newcommand{\brin}[1]{\ensuremath{\left\{#1\right\}}}
+%\newcommand{\ve}[1]{{\bm{#1}}}
+\newcommand{\ve}[1]{{\ensuremath{\mathbold{{#1}}}}} % \newcommand{\ve}[1]{\mathbf{{#1}}}
+\newcommand{\bhat}[1]{\ensuremath{\mathbf{\hat{{#1}}}}}
+\newcommand{\pozhehao}{\kern0.3ex\rule[0.8ex]{2em}{0.1ex}\kern0.3ex}
+\newcommand{\expect}[1]{\ensuremath{\langle #1\rangle}}
+\newcommand{\rcite}{[{\bf\textcolor{red}{R}}]}
+\newcommand{\SI}[2]{\ensuremath{\mathrm{#1}^{#2}}}
+\newcommand{\abs}[1]{\ensuremath{\vert #1\vert}}
+\newcommand{\norm}[1]{\ensuremath{\Vert #1\Vert}}
+\newcommand{\abbr}{\ensuremath{\stackrel{\text{\tiny abbr.}}{=}}}
+\newcommand{\snow}[1]{\ensuremath{\stackrel{\ast}{#1}}}
+\newcommand{\wmark}{{\color{red}$\square$}}
+\newcommand{\rd}{\ensuremath{\mathrm{d}}}
+\newcommand{\lby}[1]{{\color{red}\kai #1}}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}} % 上标形式引用
+\newcommand{\fcite}[1]{[{#1}]}
+\newcommand{\fucite}[1]{\textsuperscript{[{#1}]}} % 上标形式引用
+
+%%-- 制作封面 (32k) --%%
+\def\subtitle#1{\gdef\@subtitle{#1}}
+\def\@subtitle{}
+\def\displaytitle#1{\gdef\@displaytitle{#1}}
+\def\@displaytitle{}
+\renewcommand\maketitle{\newpage%
+\thispagestyle{empty}%
+  \null
+  \vskip 10mm                 % Vertical space above title.
+\begingroup
+  \def\and{\unskip, }
+  \parindent=\z@
+  \pretolerance=10000
+  \rightskip=\z@ \@plus 3cm
+  {\song\xiaosi[1.25] \lineskip .5em \@author \par}%
+  \vskip 12mm                % Vertical space after author. [2cm]
+  {\cusong\xiaoyi \@title \par}%     
+  \vskip 5mm                % Vertical space after title.
+  \if!\@subtitle!\else
+  {\bf\xiaoer[1.25]\ignorespaces\@subtitle \par}
+  \vskip 10mm                % Vertical space after subtitle.
+  \fi
+  \if!\@date!\else
+%    {\large \@date}%        % Date set in \large size.
+  \par
+  \vskip 1.5em               % Vertical space after date.
+  \fi
+ \vfill
+ \begin{center}% same as main fonts
+ \cusong\wuhao[1.25] 国防工业出版社\par $\bm{\cdot}$\kern0.3em 北~京\kern0.3em$\bm{\cdot}$
+ \end{center}
+ \vskip 10mm
+\endgroup}
+
+%%-- 最后处理行距, 字体，缩进正常化 --%%
+\newlength\CJK@twochars
+\def\CJKindent{%
+\settowidth\CJK@twochars{中国}%
+\parindent\CJK@twochars}
+\AtBeginDocument{%
+\renewcommand{\baselinestretch}{1.410606662}\relax%
+\normalsize\relax%
+\CJKindent\relax%
+}
+
+%%-- happy latexing, byliu --%%
+\endinput
+

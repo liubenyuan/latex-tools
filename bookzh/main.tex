@@ -1,0 +1,45 @@
+% Template for BOOKZH32K
+% byliu <liubenyuan@gmail.com>
+% 2018-06-30
+\documentclass{book}
+\usepackage[otf]{bookzh16k}
+
+%--------------------- title and author ---------------------------------------
+\title{国防工业出版社书籍}
+\subtitle{小16K书籍模板}
+\displaytitle{书籍模板（小16K版本）}
+\author{国防科技大学}
+\date{\today}
+
+\begin{document}
+\graphicspath{{figs/},{/fig}}
+
+%%-- title page --%%
+\maketitle
+\frontmatter
+%\input{tex/preface.tex}
+
+%%-- TOC -- %%
+\midmatter
+\tableofcontents
+\listoffigures
+\listoftables
+
+%%-- main source --%%
+\mainmatter
+\input{tex/chap01}
+%\input{tex/chap02}
+
+%%-- bibliography --%%
+\bibliographystyle{bstutf8}
+\phantomsection\cleardoublepage
+\bibliography{book}
+\addcontentsline{toc}{chapter}{参考文献}
+
+%%-- back matter --%%
+%\appendix
+%\input{data/append_GML}
+%\input{data/append_MI}
+
+\end{document}
+
