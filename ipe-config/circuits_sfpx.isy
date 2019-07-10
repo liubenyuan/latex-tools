@@ -1,0 +1,1032 @@
+<ipestyle name="circuits_sfpx">
+<symbol name="nmos(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<path matrix="1 0 0 0.75 -256 -570" stroke="sym-stroke">
+256 776 m
+256 744 l
+256 744 l
+</path>
+<path matrix="2 0 0 1 -512 -760" stroke="sym-stroke">
+256 760 m
+248 760 l
+248 760 l
+248 760 l
+</path>
+<path matrix="1 0 0 1 -256 -760" stroke="sym-stroke">
+272 752 m
+272 744 l
+</path>
+<path matrix="1 0 0 1 -160 -208" stroke="sym-stroke">
+176 224 m
+176 216 l
+164 216 l
+164 200 l
+169 200 l
+</path>
+<path matrix="1 0 0 1 -160 -208" stroke="sym-stroke" fill="sym-stroke">
+176 200 m
+169 202 l
+169 198 l
+169 198 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="pmos(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<path matrix="1 0 0 0.75 -256 -570" stroke="sym-stroke">
+256 776 m
+256 744 l
+256 744 l
+</path>
+<path matrix="2 0 0 1 -512 -760" stroke="sym-stroke">
+256 760 m
+248 760 l
+248 760 l
+248 760 l
+</path>
+<path matrix="1 0 0 1 -208 -208" stroke="sym-stroke">
+224 192 m
+224 200 l
+212 200 l
+212 216 l
+212 216 l
+</path>
+<path matrix="-1 0 0 1 180 -192" stroke="sym-stroke" fill="sym-stroke">
+176 200 m
+169 202 l
+169 198 l
+169 198 l
+h
+</path>
+<path matrix="1 0 0 1 -208 -208" stroke="sym-stroke">
+219 216 m
+224 216 l
+224 224 l
+</path>
+</group>
+</symbol>
+<symbol name="npn(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<group matrix="1 0 0 1 -160 -256">
+<path matrix="1 0 0 1 -352 -496" stroke="sym-stroke">
+528 768 m
+528 764 l
+512 756 l
+</path>
+<path matrix="1 0 0 0.75 -352 -308" stroke="sym-stroke">
+512 768 m
+512 736 l
+512 736 l
+512 752 l
+496 752 l
+</path>
+<path stroke="sym-stroke">
+176 240 m
+176 244 l
+160 252 l
+</path>
+<path matrix="1 0 0 1 0 -1" stroke="sym-stroke" fill="sym-stroke">
+176 245 m
+171 250 l
+169 246 l
+h
+</path>
+</group>
+</group>
+</symbol>
+<symbol name="pnp(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<path matrix="1 0 0 1 -512 -752" stroke="sym-stroke">
+512 748 m
+528 740 l
+528 736 l
+</path>
+<path matrix="1 0 0 0.75 -512 -564" stroke="sym-stroke">
+512 768 m
+512 736 l
+512 736 l
+512 752 l
+496 752 l
+</path>
+<path matrix="1 0 0 1 -208 -256" stroke="sym-stroke" fill="sym-stroke">
+208 260 m
+215 261 l
+213 265 l
+h
+</path>
+<path matrix="1 0 0 1 -208 -256" stroke="sym-stroke">
+208 260 m
+224 268 l
+224 272 l
+</path>
+</group>
+</symbol>
+<symbol name="res(sfpx)">
+<group matrix="1 0 0 1 -358 -760">
+<path stroke="sym-stroke">
+336 760 m
+346 760 l
+348 766 l
+352 754 l
+356 766 l
+360 754 l
+364 766 l
+368 754 l
+370 760 l
+376 760 l
+380 760 l
+</path>
+</group>
+</symbol>
+<symbol name="ind(sfpx)">
+<group matrix="1 0 0 1 -336 -784">
+<path matrix="0.611111 0 0 0.790892 47.5556 182.589" stroke="sym-stroke">
+490 759 m
+8.06226 0 0 -8.06226 498 760 505.822 758.045 a
+</path>
+<path matrix="0.611111 0 0 0.790892 47.5556 182.589" stroke="sym-stroke">
+496 759 m
+3 0 0 -3 493 759 490 759 a
+</path>
+<path matrix="1 0 0 1 0 8" stroke="sym-stroke">
+341 776 m
+4.83672 0 0 -6.25962 345.83 775.659 350.629 774.883 a
+</path>
+<path matrix="0.611111 0 0 0.790892 53.6667 182.589" stroke="sym-stroke">
+496 759 m
+3 0 0 -3 493 759 490 759 a
+</path>
+<path matrix="0.611111 0 0 0.790892 53.6667 182.589" stroke="sym-stroke">
+490 759 m
+8.06226 0 0 -8.06226 498 760 505.822 758.045 a
+</path>
+<path matrix="0.611111 0 0 0.790892 59.7778 182.589" stroke="sym-stroke">
+496 759 m
+3 0 0 -3 493 759 490 759 a
+</path>
+<path matrix="0.611111 0 0 0.790892 59.7778 182.589" stroke="sym-stroke">
+490 759 m
+8.06226 0 0 -8.06226 498 760 505.822 758.045 a
+</path>
+<path matrix="0.611111 0 0 0.790892 65.8889 182.589" stroke="sym-stroke">
+496 759 m
+3 0 0 -3 493 759 490 759 a
+</path>
+<path matrix="1 0 0 1 0 8" stroke="sym-stroke">
+365.333 774.877 m
+4.85572 0 0 -6.28421 370.152 775.656 375 776 a
+</path>
+<path matrix="1 0 0 1 0 8" stroke="sym-stroke">
+380 776 m
+375 776 l
+</path>
+<path matrix="1 0 0 1 0 8" stroke="sym-stroke">
+341 776 m
+336 776 l
+</path>
+</group>
+</symbol>
+<symbol name="gnd(sfpx)">
+<group matrix="1 0 0 1 -278 -692">
+<path matrix="1 0 0 1 86 -28" stroke="sym-stroke">
+192 732 m
+192 720 l
+</path>
+<path matrix="1 0 0 1 86 -28" stroke="sym-stroke">
+186 720 m
+198 720 l
+</path>
+<path matrix="1 0 0 1 86 -26" stroke="sym-stroke">
+190 714 m
+194 714 l
+</path>
+<path matrix="1 0 0 1 86 -28" stroke="sym-stroke">
+188 718 m
+196 718 l
+</path>
+</group>
+</symbol>
+<symbol name="gnds(sfpx)">
+<group matrix="1 0 0 1 -302 -692">
+<path matrix="1 0 0 1 86 -28" stroke="sym-stroke">
+216 732 m
+216 720 l
+222 720 l
+216 714 l
+210 720 l
+216 720 l
+</path>
+</group>
+</symbol>
+<symbol name="vdc(sfpx)">
+<group matrix="0 -1 1 0 -760 424">
+<path stroke="sym-stroke">
+8 0 0 8 424 760 e
+</path>
+<path stroke="sym-stroke">
+404 760 m
+416 760 l
+416 760 l
+</path>
+<path stroke="sym-stroke">
+432 760 m
+444 760 l
+444 760 l
+</path>
+<path matrix="1 0 0 1 1 0" stroke="sym-stroke">
+418 760 m
+422 760 l
+</path>
+<path matrix="1 0 0 1 1 0" stroke="sym-stroke">
+420 762 m
+420 758 l
+</path>
+<path matrix="1 0 0 1 -1 0" stroke="sym-stroke">
+429 762 m
+429 758 l
+</path>
+</group>
+</symbol>
+<symbol name="idc(sfpx)">
+<group matrix="1 0 0 1 -466 -264">
+<group matrix="0.333 0 0 0.333">
+<path matrix="0 1 -1 0 1226 -161" stroke="sym-stroke">
+8 0 0 8 424 760 e
+</path>
+<path matrix="0 1 -1 0 1226 -161" stroke="sym-stroke">
+404 760 m
+416 760 l
+416 760 l
+</path>
+<path matrix="0 1 -1 0 1226 -161" stroke="sym-stroke">
+432 760 m
+444 760 l
+444 760 l
+</path>
+<path stroke="sym-stroke" fill="sym-stroke">
+466 257 m
+468 264 l
+464 264 l
+h
+</path>
+<path stroke="sym-stroke">
+466 257 m
+466 269 l
+</path>
+</group>
+</group>
+</symbol>
+<symbol name="vac(sfpx)">
+<group matrix="1 0 0 1 -408 -700">
+<path matrix="0 1 -1 0 1168 276" stroke="sym-stroke">
+8 0 0 8 424 760 e
+</path>
+<path matrix="0 1 -1 0 1168 276" stroke="sym-stroke">
+404 760 m
+416 760 l
+416 760 l
+</path>
+<path matrix="0 1 -1 0 1168 276" stroke="sym-stroke">
+432 760 m
+444 760 l
+444 760 l
+</path>
+<path matrix="0 1 -1 0 1129 257" stroke="sym-stroke">
+443 726 m
+437 724
+443 721
+449 719
+443 716
+443 716 c
+</path>
+</group>
+</symbol>
+<symbol name="vno(sfpx)">
+<group matrix="1 0 0 1 -2 1">
+<path matrix="0 1 -1 0 762 -425" stroke="sym-stroke">
+8 0 0 8 424 760 e
+</path>
+<path matrix="0 1 -1 0 762 -425" stroke="sym-stroke">
+404 760 m
+416 760 l
+416 760 l
+</path>
+<path matrix="0 1 -1 0 762 -425" stroke="sym-stroke">
+432 760 m
+444 760 l
+444 760 l
+</path>
+<path matrix="0.75 0 0 0.75 -379 -523" stroke="sym-stroke">
+504 700 m
+512 692 l
+512 692 l
+</path>
+<path matrix="0.75 0 0 0.75 -379 -523" stroke="sym-stroke">
+512 700 m
+504 692 l
+</path>
+<path matrix="1 0 0 1 -506 -697" stroke="sym-stroke">
+504 696 m
+512 696 l
+</path>
+<path matrix="1 0 0 1 -506 -697" stroke="sym-stroke">
+508 700 m
+508 692 l
+508 692 l
+</path>
+</group>
+</symbol>
+<symbol name="vcv(sfpx)">
+<group matrix="0 -1 1 0 -760 488">
+<path matrix="1 0 0 1 0 24" stroke="sym-stroke">
+476 736 m
+488 742 l
+500 736 l
+488 730 l
+476 736 l
+</path>
+<path stroke="sym-stroke">
+468 760 m
+476 760 l
+476 760 l
+</path>
+<path stroke="sym-stroke">
+500 760 m
+508 760 l
+508 760 l
+</path>
+<path matrix="1 0 0 1 65 0" stroke="sym-stroke">
+418 760 m
+422 760 l
+</path>
+<path matrix="1 0 0 1 65 0" stroke="sym-stroke">
+420 762 m
+420 758 l
+</path>
+<path matrix="1 0 0 1 63 0" stroke="sym-stroke">
+429 762 m
+429 758 l
+</path>
+</group>
+</symbol>
+<symbol name="ici(sfpx)">
+<group matrix="1 0 0 1 -466 -216">
+<path matrix="0 1 -1 0 1202 -273" stroke="sym-stroke">
+468 736 m
+476 736 l
+476 736 l
+</path>
+<path matrix="0 1 -1 0 1202 -273" stroke="sym-stroke">
+500 736 m
+508 736 l
+508 736 l
+</path>
+<path matrix="0 1 -1 0 1202 -273" stroke="sym-stroke">
+476 736 m
+488 742 l
+500 736 l
+488 730 l
+476 736 l
+</path>
+<path stroke="sym-stroke" fill="sym-stroke">
+466 209 m
+468 216 l
+464 216 l
+h
+</path>
+<path stroke="sym-stroke">
+466 209 m
+466 221 l
+</path>
+</group>
+</symbol>
+<symbol name="dot(sfpx)">
+<path matrix="1 0 0 1 -238 -702" stroke="sym-stroke" fill="sym-stroke">
+2 0 0 2 238 702 e
+</path>
+</symbol>
+<symbol name="cir(sfpx)">
+<path matrix="1 0 0 1 -226 -702" stroke="sym-stroke">
+2 0 0 2 226 702 e
+</path>
+</symbol>
+<symbol name="cap(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<path matrix="1 0 0 1 -360 -736" stroke="sym-stroke">
+364 748 m
+364 724 l
+</path>
+<path matrix="1 0 0 1 -360 -736" stroke="sym-stroke">
+356 736 m
+340 736 l
+</path>
+<path matrix="1 0 0 1 -360 -736" stroke="sym-stroke">
+364 736 m
+380 736 l
+</path>
+<path matrix="1 0 0 1 -356 -688" stroke="sym-stroke">
+352 700 m
+352 676 l
+</path>
+</group>
+</symbol>
+<symbol name="capp(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<group matrix="1 0 0 1 -356 -724">
+<path matrix="1 0 0 1 -4 -12" stroke="sym-stroke">
+364 748 m
+364 724 l
+</path>
+<path matrix="1 0 0 1 -4 0" stroke="sym-stroke">
+356 724 m
+340 724 l
+</path>
+<path matrix="1 0 0 1 -4 -12" stroke="sym-stroke">
+364 736 m
+380 736 l
+</path>
+<path matrix="1 0 0 1 -4 -12" stroke="sym-stroke">
+352 748 m
+20 0 0 -20 336 736 352 724 a
+</path>
+<path stroke="sym-stroke">
+342 732 m
+346 732 l
+</path>
+<path stroke="sym-stroke">
+344 734 m
+344 730 l
+</path>
+<path stroke="sym-stroke">
+366 732 m
+370 732 l
+</path>
+</group>
+</group>
+</symbol>
+<symbol name="swo(sfpx)">
+<group matrix="1 0 0 1 -144 -704">
+<path stroke="sym-stroke">
+144 704 m
+160 704 l
+176 712 l
+</path>
+<path stroke="sym-stroke">
+176 704 m
+192 704 l
+</path>
+</group>
+</symbol>
+<symbol name="swc(sfpx)">
+<group matrix="1 0 0 1 -144 -688">
+<path stroke="sym-stroke">
+144 688 m
+160 688 l
+176 689 l
+</path>
+<path stroke="sym-stroke">
+176 688 m
+192 688 l
+</path>
+</group>
+</symbol>
+<symbol name="comp(sfpx)">
+<group matrix="1 0 0 1 -100 -532">
+<group matrix="1 0 0 1 -68 -116">
+<path stroke="sym-stroke">
+168 672 m
+168 624 l
+208 648 l
+168 672 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+274 640 m
+278 640 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+276 642 m
+276 638 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+274 624 m
+278 624 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+272 624 m
+264 624 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+272 640 m
+264 640 l
+</path>
+<path matrix="1 0 0 1 -96 16" stroke="sym-stroke">
+304 632 m
+312 632 l
+</path>
+</group>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+116 654 m
+108 654 l
+108 642 l
+100 642 l
+</path>
+</group>
+</symbol>
+<symbol name="comph(sfpx)">
+<group matrix="1 0 0 1 -176 -472">
+<group matrix="1 0 0 1 8 -176">
+<path stroke="sym-stroke">
+168 672 m
+168 624 l
+208 648 l
+168 672 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+274 640 m
+278 640 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+276 642 m
+276 638 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+274 624 m
+278 624 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+272 624 m
+264 624 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+272 640 m
+264 640 l
+</path>
+<path matrix="1 0 0 1 -96 16" stroke="sym-stroke">
+304 632 m
+312 632 l
+</path>
+</group>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+192 594 m
+181 594 l
+181 582 l
+176 582 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+187 594 m
+187 582 l
+180 582 l
+</path>
+</group>
+</symbol>
+<symbol name="opamp(sfpx)">
+<group matrix="1 0 0 1 -168 -648">
+<path stroke="sym-stroke">
+168 672 m
+168 624 l
+208 648 l
+168 672 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+274 640 m
+278 640 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+276 642 m
+276 638 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+274 624 m
+278 624 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+272 624 m
+264 624 l
+</path>
+<path matrix="1 0 0 1 -104 16" stroke="sym-stroke">
+272 640 m
+264 640 l
+</path>
+<path matrix="1 0 0 1 -96 16" stroke="sym-stroke">
+304 632 m
+312 632 l
+</path>
+</group>
+</symbol>
+<symbol name="nand(sfpx)">
+<group matrix="1 0 0 1 -264 -540">
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 672 m
+256 640 l
+272 640 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 672 m
+272 672 l
+</path>
+<path matrix="1 0 0 1 -8 -116" stroke="sym-stroke">
+288 672 m
+16 0 0 -16 288 656 288 640 a
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+3 0 0 3 291 656 e
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 664 m
+248 664 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 648 m
+248 648 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+294 656 m
+304 656 l
+</path>
+</group>
+</symbol>
+<symbol name="nand2(sfpx)">
+<group matrix="1 0 0 1 -264 -540">
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 672 m
+256 640 l
+272 640 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 672 m
+272 672 l
+</path>
+<path matrix="1 0 0 1 -8 -116" stroke="sym-stroke">
+288 672 m
+16 0 0 -16 288 656 288 640 a
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+3 0 0 3 291 656 e
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 664 m
+248 664 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 648 m
+248 648 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+294 656 m
+304 656 l
+</path>
+</group>
+</symbol>
+<symbol name="nor2(sfpx)">
+<group matrix="1 0 0 1 -412 -544">
+<path matrix="1 0 0 1 84 -112" stroke="sym-stroke">
+320 672 m
+20 0 0 -20 308 656 320 640 a
+</path>
+<path matrix="1 0 0 1 84 -112" stroke="sym-stroke">
+320 672 m
+41.8675 0 0 -41.8675 326.667 630.667 360 656 a
+</path>
+<path matrix="1 0 0 -1 84 1200.2" stroke="sym-stroke">
+320 672 m
+41.8675 0 0 -41.8675 326.667 630.667 360 656 a
+</path>
+<path matrix="1 0 0 1 156 -112" stroke="sym-stroke">
+3 0 0 3 291 656 e
+</path>
+<path matrix="0.714286 0 0 1 177.143 -112" stroke="sym-stroke">
+326 664 m
+312 664 l
+</path>
+<path matrix="0.714286 0 0 1 177.143 -112" stroke="sym-stroke">
+326 648 m
+312 648 l
+</path>
+<path matrix="1 0 0 1 84 -112" stroke="sym-stroke">
+366 656 m
+372 656 l
+</path>
+</group>
+</symbol>
+<symbol name="inv(sfpx)">
+<group matrix="1 0 0 1 -264 -504">
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 636 m
+288 620 l
+256 604 l
+256 636 l
+</path>
+<path matrix="1 0 0 1 8 -152" stroke="sym-stroke">
+3 0 0 3 291 656 e
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+294 620 m
+304 620 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+256 620 m
+248 620 l
+</path>
+</group>
+</symbol>
+<symbol name="and2(sfpx)">
+<group matrix="1 0 0 1 -264 -464">
+<path matrix="1 0 0 1 8 -192" stroke="sym-stroke">
+256 672 m
+256 640 l
+272 640 l
+</path>
+<path matrix="1 0 0 1 8 -192" stroke="sym-stroke">
+256 672 m
+272 672 l
+</path>
+<path matrix="1 0 0 1 -8 -192" stroke="sym-stroke">
+288 672 m
+16 0 0 -16 288 656 288 640 a
+</path>
+<path matrix="1 0 0 1 8 -192" stroke="sym-stroke">
+256 664 m
+248 664 l
+</path>
+<path matrix="1 0 0 1 8 -192" stroke="sym-stroke">
+256 648 m
+248 648 l
+</path>
+<path matrix="1 0 0 1 8 -192" stroke="sym-stroke">
+294 656 m
+304 656 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+294 580 m
+288 580 l
+</path>
+</group>
+</symbol>
+<symbol name="or2(sfpx)">
+<group matrix="1 0 0 1 -412 -500">
+<path matrix="1 0 0 1 84 -156" stroke="sym-stroke">
+320 672 m
+20 0 0 -20 308 656 320 640 a
+</path>
+<path matrix="1 0 0 1 84 -156" stroke="sym-stroke">
+320 672 m
+41.8675 0 0 -41.8675 326.667 630.667 360 656 a
+</path>
+<path matrix="1 0 0 -1 84 1156.2" stroke="sym-stroke">
+320 672 m
+41.8675 0 0 -41.8675 326.667 630.667 360 656 a
+</path>
+<path matrix="0.714286 0 0 1 177.143 -156" stroke="sym-stroke">
+326 664 m
+312 664 l
+</path>
+<path matrix="0.714286 0 0 1 177.143 -156" stroke="sym-stroke">
+326 648 m
+312 648 l
+</path>
+<path matrix="1 0 0 1 84 -156" stroke="sym-stroke">
+366 656 m
+372 656 l
+</path>
+<path matrix="1 0 0 1 84 -80" stroke="sym-stroke">
+366 580 m
+360 580 l
+</path>
+</group>
+</symbol>
+<symbol name="buf(sfpx)">
+<group matrix="1 0 0 1 -336 -504">
+<path matrix="1 0 0 1 80 -116" stroke="sym-stroke">
+256 636 m
+288 620 l
+256 604 l
+256 636 l
+</path>
+<path matrix="1 0 0 1 80 -116" stroke="sym-stroke">
+294 620 m
+304 620 l
+</path>
+<path matrix="1 0 0 1 80 -116" stroke="sym-stroke">
+256 620 m
+248 620 l
+</path>
+<path matrix="1 0 0 1 8 -116" stroke="sym-stroke">
+366 620 m
+360 620 l
+</path>
+</group>
+</symbol>
+<symbol name="portu(sfpx)">
+<path matrix="1 0 0 1 -451 -188" stroke="sym-stroke" fill="sym-stroke">
+448 185 m
+448 191 l
+454 191 l
+457 188 l
+454 185 l
+454 185 l
+h
+</path>
+</symbol>
+<symbol name="portb(sfpx)">
+<path matrix="1 0 0 1 -427 -187" stroke="sym-stroke" fill="sym-stroke">
+430 184 m
+424 184 l
+421 187 l
+424 190 l
+430 190 l
+433 187 l
+430 184 l
+h
+</path>
+</symbol>
+<symbol name="gm(sfpx)">
+<group matrix="1 0 0 1 -328 -384">
+<path matrix="1 0 0 1 0 2" stroke="sym-stroke">
+328 406 m
+328 358 l
+346 370 l
+346 394 l
+h
+</path>
+<path stroke="sym-stroke">
+330 392 m
+334 392 l
+</path>
+<path stroke="sym-stroke">
+332 394 m
+332 390 l
+</path>
+<path stroke="sym-stroke">
+330 376 m
+334 376 l
+</path>
+<path stroke="sym-stroke">
+346 384 m
+352 384 l
+</path>
+<path matrix="1 0 0 1 0 8" stroke="sym-stroke">
+328 384 m
+320 384 l
+</path>
+<path stroke="sym-stroke">
+328 376 m
+320 376 l
+</path>
+</group>
+</symbol>
+<symbol name="tline(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<group matrix="1 0 0 1 -508 -420">
+<path matrix="0.5 0 0 1 240 4" stroke="sym-stroke">
+4 0 0 4 480 416 e
+</path>
+<path stroke="sym-stroke">
+480 424 m
+536 424 l
+</path>
+<path stroke="sym-stroke">
+480 416 m
+536 416 l
+</path>
+<path stroke="sym-stroke">
+536 424 m
+5 0 0 -5 533 420 536 416 a
+</path>
+<path matrix="1.33333 0 0 1 -157.333 0" stroke="sym-stroke">
+478 420 m
+472 420 l
+</path>
+<path stroke="sym-stroke">
+538 420 m
+544 420 l
+</path>
+<path stroke="sym-stroke" dash="dotted">
+480 420 m
+538 420 l
+538 420 l
+</path>
+</group>
+</group>
+</symbol>
+<symbol name="opampd(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<path matrix="1 0 0 1 -168 -648" stroke="sym-stroke">
+168 672 m
+168 624 l
+208 648 l
+168 672 l
+</path>
+<path matrix="1 0 0 1 -272 -632" stroke="sym-stroke">
+274 640 m
+278 640 l
+</path>
+<path matrix="1 0 0 1 -272 -632" stroke="sym-stroke">
+276 642 m
+276 638 l
+</path>
+<path matrix="1 0 0 1 -272 -632" stroke="sym-stroke">
+274 624 m
+278 624 l
+</path>
+<path matrix="1 0 0 1 -272 -632" stroke="sym-stroke">
+272 624 m
+264 624 l
+</path>
+<path matrix="1 0 0 1 -272 -632" stroke="sym-stroke">
+272 640 m
+264 640 l
+</path>
+<path matrix="2.625 0 0 1 -666 -632" stroke="sym-stroke">
+272 640 m
+264 640 l
+</path>
+<path matrix="2.625 0 0 1 -666 -648" stroke="sym-stroke">
+272 640 m
+264 640 l
+</path>
+</group>
+</symbol>
+<symbol name="tline_long(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<group matrix="0.333 0 0 0.333">
+<path matrix="0.509615 0 0 1 -272.461 -416" stroke="sym-stroke">
+4 0 0 4 480 416 e
+</path>
+<path matrix="0.463412 0 0 1 -250.284 -420" stroke="sym-stroke">
+480 424 m
+536 424 l
+</path>
+<path matrix="0.463412 0 0 1 -250.284 -420" stroke="sym-stroke">
+480 416 m
+536 416 l
+</path>
+<path matrix="1.01923 0 0 1 -517.077 -420" stroke="sym-stroke">
+536 424 m
+5 0 0 -5 533 420 536 416 a
+</path>
+<path matrix="1.35897 0 0 1 -677.435 -420" stroke="sym-stroke">
+478 420 m
+472 420 l
+</path>
+<path matrix="1.01923 0 0 1 -517.077 -420" stroke="sym-stroke">
+538 420 m
+544 420 l
+</path>
+<path matrix="1.01923 0 0 1 -517.077 -420" stroke="sym-stroke" dash="dotted">
+480 420 m
+538 420 l
+538 420 l
+</path>
+<path matrix="1 0 0 1 0.25 0" stroke="sym-stroke">
+-4 7 m
+0 5
+-4 -2
+-1 -6 c
+</path>
+<path matrix="1 0 0 1 3.25 0" stroke="sym-stroke">
+-4 7 m
+0 5
+-4 -2
+-1 -6 c
+</path>
+<path matrix="1 0 0 1 0.25 0" stroke="sym-stroke">
+1 4 m
+29 4 l
+</path>
+<path matrix="1 0 0 1 0.25 0" stroke="sym-stroke">
+1 -4 m
+29 -4 l
+</path>
+</group>
+</group>
+</symbol>
+<symbol name="mux(sfpx)">
+<group matrix="0.333 0 0 0.333">
+<path matrix="1 0 0 1 -328 -382" stroke="sym-stroke">
+328 406 m
+328 358 l
+346 370 l
+346 394 l
+h
+</path>
+<path matrix="1 0 0 1 -328 -384" stroke="sym-stroke">
+346 384 m
+352 384 l
+</path>
+<path matrix="1 0 0 1 -328 -376" stroke="sym-stroke">
+328 384 m
+320 384 l
+</path>
+<path matrix="1 0 0 1 -328 -384" stroke="sym-stroke">
+328 376 m
+320 376 l
+</path>
+<path matrix="1 0 0 1 1 1" stroke="sym-stroke">
+9 -18 m
+9 -31 l
+9 -31 l
+</path>
+</group>
+</symbol>
+</ipestyle>
