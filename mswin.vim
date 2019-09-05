@@ -126,6 +126,9 @@ set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
 set hid
+set nu
+set wrap
+set textwidth=0
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -194,3 +197,6 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+" automatically remove trailing white spaces for .py and .vhd
+autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.vhd :%s/\s\+$//e
