@@ -131,6 +131,10 @@
 0 0 m -1.0 0.333 l -1.0 -0.333 l h
 -1 0 m -2.0 0.333 l -2.0 -0.333 l h
 </path></symbol>
+<opacity name="10%" value="0.1"/>
+<opacity name="30%" value="0.3"/>
+<opacity name="50%" value="0.5"/>
+<opacity name="75%" value="0.75"/>
 <preamble>
 \renewcommand\rmdefault{cmss}
 \makeatletter

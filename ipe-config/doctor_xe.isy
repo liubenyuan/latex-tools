@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipestyle SYSTEM "ipe.dtd">
-<ipestyle name="doctor Xe">
+<ipestyle name="doctor_xe">
 <color name="ivyblue" value="0.1922 0.3961 0.6824"/>
 <color name="ivydark" value="0.0824 0.2235 0.3490"/>
 <color name="ivypurp" value="0.8039 0.3569 0.5569"/>
