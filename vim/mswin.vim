@@ -172,7 +172,7 @@ if has("gui_running")
     set t_Co=256
     set guitablabel=%M\ %t
     language messages zh_CN.utf-8
-    set guifont=Envy\ Code\ R:h15
+    set guifont=Source\ Code\ Pro:h15
 endif
 
 ""
