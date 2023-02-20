@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipestyle SYSTEM "ipe.dtd">
-<ipestyle name="doctor_xe">
+<ipestyle name="doctor_xe_adobe">
 <color name="ivyblue" value="0.1922 0.3961 0.6824"/>
 <color name="ivydark" value="0.0824 0.2235 0.3490"/>
 <color name="ivypurp" value="0.8039 0.3569 0.5569"/>
@@ -152,23 +152,27 @@ end="\end{itemize}"/>
 \usepackage{graphicx}
 \usepackage[no-math]{xeCJK}
 
-% Using Founder Family Fonts
+%% Using Founder Family Fonts
 %\setCJKmainfont[BoldFont={FZYaSong-DB-GBK}]{FZShuSong_GB18030-Z01}
 %\setCJKsansfont{FZHei-B01} % Hei
 %\setCJKmonofont{FZFangSong-Z02} % fs
-\setCJKmainfont[BoldFont={方正中雅宋_GBK.TTF}]{方正书宋_GB18030.TTF}
-\setCJKsansfont{方正黑体_GBK.ttf} % Hei
-\setCJKmonofont{方正仿宋_GBK.ttf} % fs
-% alias
+%% alias
 %\setCJKfamilyfont{song}{FZShuSong_GB18030-Z01}
 %\setCJKfamilyfont{hei}{FZHei-B01}
 %\setCJKfamilyfont{fs}{FZFangSong-Z02} % fang-song
 %\setCJKfamilyfont{kai}{FZKai-Z03} % Kai
-\setCJKfamilyfont{song}{方正书宋_GB18030.TTF}
-\setCJKfamilyfont{hei}{方正黑体_GBK.ttf}
-\setCJKfamilyfont{fs}{方正仿宋_GBK.ttf} % fang-song
-\setCJKfamilyfont{kai}{方正楷体_GBK.ttf} % Kai
-% redefine commands
+
+% Using Adobe Family Fonts
+\setCJKmainfont{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std} % Hei
+\setCJKmonofont{Adobe Fangsong Std} % fs
+% alias
+\setCJKfamilyfont{song}{Adobe Song Std}
+\setCJKfamilyfont{hei}{Adobe Heiti Std}
+\setCJKfamilyfont{fs}{Adobe Fangsong Std}
+\setCJKfamilyfont{kai}{Adobe Kaiti Std}
+
+%% redefine commands
 \newcommand{\song}{\CJKfamily{song}}
 \newcommand{\fs}{\CJKfamily{fs}}
 \newcommand{\kai}{\CJKfamily{kai}}
